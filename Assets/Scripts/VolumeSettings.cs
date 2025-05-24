@@ -16,13 +16,23 @@ public class VolumeSettings : MonoBehaviour
     private bool isMusicMuted = false;
     private bool isSFXMuted = false;
     private bool isAdjusting = false;
+    private bool isInitializing = false;
+
 
 
     void Start()
     {
-        SetMusicVolume();
-        float SFXVolume = SFXSlider.value;
-        audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+        if (PlayerPrefs.HasKey("BGMVolume") && PlayerPrefs.HasKey("SFXVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+            SetMusicVolume();
+            float SFXVolume = SFXSlider.value;
+            audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+            PlayerPrefs.SetFloat("SFXVolume", SFXVolume);
+        }
     }
 
     public void ToggleMusic()
@@ -46,22 +56,39 @@ public class VolumeSettings : MonoBehaviour
     {
         float BGMVolume = BGMSlider.value;
         audioMixer.SetFloat("BGM", Mathf.Log10(BGMVolume) * 20);
+        PlayerPrefs.SetFloat("BGMVolume", BGMVolume);
     }
 
     public void SetSFXVolume()
     {
         float SFXVolume = SFXSlider.value;
         audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", SFXVolume);
 
-        // Play test sound only once when starting to adjust
-        if (!isAdjusting && !isSFXMuted)
+        // Play test sound only if not initializing and not muted
+        if (!isInitializing && !isAdjusting && !isSFXMuted)
         {
             SFXSource.PlayOneShot(testSFX);
             isAdjusting = true;
-
-            // Reset the flag after a short delay
-            Invoke("ResetAdjusting", 1f);
+            Invoke("ResetAdjusting", 0.75f);
         }
+    }
+
+    private void LoadVolume()
+    {
+        isInitializing = true;
+
+        // Set BGM
+        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
+        SetMusicVolume();
+
+        // Set SFX without playing test sound
+        float SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
+        SFXSlider.value = SFXVolume;
+        audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+
+        isInitializing = false;
+
     }
 
     private void ResetAdjusting()
