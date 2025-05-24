@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.github.siccity.xnode": "file:D:/Downloads/Compressed/xNode-1.8.0",
+    "com.github.siccity.xnode": "file:../xNode-1.8.0",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.35",
