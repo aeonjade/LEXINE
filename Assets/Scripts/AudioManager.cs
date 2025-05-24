@@ -17,11 +17,6 @@ public class AudioManager : MonoBehaviour
         BGMSource.Play();
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
