@@ -1153,6 +1153,18 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 528342012}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: b636aebb12ad72a47a94f59027b0b398, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 528342014}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: ToggleSFX
@@ -1313,6 +1325,7 @@ MonoBehaviour:
   SFXSlider: {fileID: 1507878568}
   BGMSource: {fileID: 42744957}
   SFXSource: {fileID: 1818373558}
+  testSFX: {fileID: 8300000, guid: b636aebb12ad72a47a94f59027b0b398, type: 3}
 --- !u!1 &634265359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2083,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 528342012}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: b636aebb12ad72a47a94f59027b0b398, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
