@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using XNode;
+﻿using UnityEngine;
 
 public class MultipleChoiceDialog : BaseNode
 {
@@ -9,7 +6,6 @@ public class MultipleChoiceDialog : BaseNode
 	[Input] public string entry;
 	[Output] public string a;
 	[Output] public string b;
-
 
 	[TextArea(7, 20)]
 

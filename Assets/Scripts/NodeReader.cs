@@ -6,6 +6,12 @@ using XNode;
 
 public class NodeReader : MonoBehaviour
 {
+    public GameObject actorImageGO;
+    public AudioSource bgmSource;
+    public AudioClip suspenseClip;
+    public AudioClip adventureClip;
+    public AudioClip dramaClip;
+    public AudioClip happyClip;
     public TMP_Text dialog;
     public Sprite backgroundImage;
     public GameObject ImageGO;
@@ -45,6 +51,42 @@ public class NodeReader : MonoBehaviour
             buttonB.SetActive(true);
 
             nextButtonGO.SetActive(false);
+        }
+        else if (node is SimpleDialogV2)
+        {
+            var dialogNode = (SimpleDialogV2)node;
+
+            dialog.text = dialogNode.getDialogText();
+            ImageGO.GetComponent<Image>().sprite = dialogNode.getSprite();
+
+            Image actorImage = actorImageGO.GetComponent<Image>();
+
+            if (dialogNode.getActorSprite() != null)
+            {
+                actorImage.sprite = dialogNode.getActorSprite();
+                actorImageGO.SetActive(true);
+
+                if (dialogNode.shouldSlide())
+                {
+                    actorImageGO.transform.localPosition = new Vector3(-540, 0, 0);
+                    LeanTween.moveLocalX(actorImageGO, 0f, 1f);
+                }
+                else
+                {
+                    actorImageGO.transform.localPosition = new Vector3(-540, 0, 0);
+                }
+            }
+            else
+            {
+                actorImageGO.SetActive(false);
+            }
+
+
+            PlayBGM(dialogNode.getBGM());
+
+            buttonA.SetActive(false);
+            buttonB.SetActive(false);
+            nextButtonGO.SetActive(true);
         }
         else
         {
@@ -104,5 +146,27 @@ public class NodeReader : MonoBehaviour
             return currentNode.GetOutputPort("exit").Connection.node as BaseNode;
 
         }
+    }
+
+    void PlayBGM(BGM bgm)
+    {
+        switch (bgm)
+        {
+            case BGM.SUSPENSE:
+                bgmSource.clip = suspenseClip;
+                break;
+            case BGM.ADVENTURE:
+                bgmSource.clip = adventureClip;
+                break;
+            case BGM.DRAMA:
+                bgmSource.clip = dramaClip;
+                break;
+            case BGM.HAPPY:
+                bgmSource.clip = happyClip;
+                break;
+        }
+
+        if (bgmSource.clip != null)
+            bgmSource.Play();
     }
 }

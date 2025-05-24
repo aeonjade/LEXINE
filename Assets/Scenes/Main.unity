@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 218230383}
   - component: {fileID: 218230382}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 930569337}
   - component: {fileID: 930569336}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ButtonA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,8 +856,8 @@ RectTransform:
   - {fileID: 218230381}
   - {fileID: 19925367}
   - {fileID: 2002678313}
-  - {fileID: 1609202423}
   - {fileID: 930569335}
+  - {fileID: 1609202423}
   - {fileID: 2023490332}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -941,6 +941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4361ef1cce1a3f4cbfab9cfc6be19c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actorImageGO: {fileID: 0}
+  bgmSource: {fileID: 0}
+  suspenseClip: {fileID: 0}
+  adventureClip: {fileID: 0}
+  dramaClip: {fileID: 0}
+  happyClip: {fileID: 0}
   dialog: {fileID: 2023490333}
   backgroundImage: {fileID: 0}
   ImageGO: {fileID: 218230380}
@@ -1059,7 +1065,7 @@ GameObject:
   - component: {fileID: 1609202425}
   - component: {fileID: 1609202424}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,7 +1334,7 @@ GameObject:
   - component: {fileID: 2002678315}
   - component: {fileID: 2002678314}
   m_Layer: 5
-  m_Name: Button
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,7 +1466,7 @@ GameObject:
   - component: {fileID: 2023490334}
   - component: {fileID: 2023490333}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
