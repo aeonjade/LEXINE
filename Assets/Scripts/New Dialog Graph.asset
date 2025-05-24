@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8788857595531650893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1064, y: -344}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -8788857595531650893}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: 6330349285251545976}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -8788857595531650893}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8183690181068999680}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: win
+  dialogImage: {fileID: 0}
 --- !u!114 &-8183690181068999680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +60,7 @@ MonoBehaviour:
   m_Name: Exit
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1144, y: -8}
+  position: {x: 1672, y: 40}
   ports:
     keys:
     - entry
@@ -26,11 +73,64 @@ MonoBehaviour:
       - fieldName: exit
         node: {fileID: 3907673538062728438}
         reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -6449796424343540227}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -8788857595531650893}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
+--- !u!114 &-6449796424343540227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1064, y: -88}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -6449796424343540227}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: 6330349285251545976}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -6449796424343540227}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8183690181068999680}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: lose
+  dialogImage: {fileID: 0}
 --- !u!114 &-4512625776927413810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +181,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 6346605627675836354}
+        node: {fileID: 6330349285251545976}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -142,6 +242,9 @@ MonoBehaviour:
   - {fileID: -8183690181068999680}
   - {fileID: -4512625776927413810}
   - {fileID: 3907673538062728438}
+  - {fileID: 6330349285251545976}
+  - {fileID: -8788857595531650893}
+  - {fileID: -6449796424343540227}
 --- !u!114 &3907673538062728438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +292,69 @@ MonoBehaviour:
   exit: 
   dialogText: Go Left
   dialogImage: {fileID: 8274395459903716270, guid: cb425c47750e9cf4587dc52538c56dae, type: 3}
+--- !u!114 &6330349285251545976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 776, y: -264}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: 6330349285251545976}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: b
+        node: {fileID: -4512625776927413810}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: 6330349285251545976}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8788857595531650893}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: 6330349285251545976}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -6449796424343540227}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: See if someone is hiding
+  dialogImage: {fileID: 0}
+  difficultyCheckValue: 12
+  abilityCheck: 0
 --- !u!114 &6346605627675836354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,9 +381,6 @@ MonoBehaviour:
       connections:
       - fieldName: exit
         node: {fileID: -787011625039771934}
-        reroutePoints: []
-      - fieldName: b
-        node: {fileID: -4512625776927413810}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

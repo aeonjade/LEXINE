@@ -9,10 +9,20 @@ public class BaseNode : Node
 	{
 		return "";
 	}
-	
+
 	public virtual Sprite getSprite()
 	{
 		return null;
+	}
+
+	public virtual ABILITY getAbility()
+	{
+		return ABILITY.PERCEPTION;
+	}
+
+	public virtual float getDC()
+	{
+		return 10.0f;
 	}
 
 }

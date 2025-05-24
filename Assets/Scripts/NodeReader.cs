@@ -87,6 +87,18 @@ public class NodeReader : MonoBehaviour
             }
             return node.GetOutputPort("exit").Connection.node as BaseNode;
         }
+        else if (node is AbilityCheckNode)
+        {
+            int d20 = Random.Range(1, 21);
+            if (d20 + characterSheet.gameObject.GetComponent<CharacterStats>().survival >= ((AbilityCheckNode)node).getDC())
+            {
+                return node.GetOutputPort("success").Connection.node as BaseNode;
+            }
+            else
+            {
+                return node.GetOutputPort("failed").Connection.node as BaseNode;
+            }
+        }
         else
         {
             return currentNode.GetOutputPort("exit").Connection.node as BaseNode;
