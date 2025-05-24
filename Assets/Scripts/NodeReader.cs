@@ -7,7 +7,7 @@ using XNode;
 public class NodeReader : MonoBehaviour
 {
     public GameObject actorImageGO;
-    public AudioSource bgmSource;
+    private AudioSource bgmSource;
     public AudioClip suspenseClip;
     public AudioClip adventureClip;
     public AudioClip dramaClip;
@@ -27,6 +27,12 @@ public class NodeReader : MonoBehaviour
 
     void Start()
     {
+        // Get the first AudioSource in the scene
+        bgmSource = GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>();
+        if (bgmSource == null)
+        {
+            Debug.LogWarning("No AudioSource found in the scene!");
+        }
         currentNode = GetStartNode();
         AdvanceDialog();
     }
