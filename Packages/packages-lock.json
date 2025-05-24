@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.github.siccity.xnode": {
+      "version": "file:D:/Downloads/Compressed/xNode-1.8.0",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "10.1.4",
       "depth": 1,
