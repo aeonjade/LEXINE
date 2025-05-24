@@ -70,7 +70,7 @@ public class VolumeSettings : MonoBehaviour
         {
             SFXSource.PlayOneShot(testSFX);
             isAdjusting = true;
-            Invoke("ResetAdjusting", 0.75f);
+            Invoke("ResetAdjusting", 0.5f);
         }
     }
 
