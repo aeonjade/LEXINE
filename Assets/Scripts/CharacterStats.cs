@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 [Serializable]
@@ -42,6 +43,9 @@ public class CharacterStats : MonoBehaviour
     public bool hasStabilizerUnit = false;
     public bool hasNavigationModule = false;
     public bool hasShieldGenerator = false;
+
+    // Input Fields
+    public TMP_InputField raiderNameInputField;
 
     public void ResetAll()
     {
@@ -194,6 +198,12 @@ public class CharacterStats : MonoBehaviour
                 domination += 1;
                 break;
         }
+        ResetInputFields();
+    }
+
+    private void ResetInputFields()
+    {
+        raiderNameInputField.text = "";
     }
 
     public void PlayAsEien()
@@ -245,5 +255,10 @@ public class CharacterStats : MonoBehaviour
     public void ChooseHexari() => ChooseRace(RACE.Hexari);
     public void ChooseDrako() => ChooseRace(RACE.Drako);
     public void ChooseXentharian() => ChooseRace(RACE.Xentharian);
+
+    public void SetRaiderName()
+    {
+        raiderName = raiderNameInputField.text.Trim();
+    }
 
 }

@@ -10,6 +10,7 @@ TagManager:
   - SFXToggle
   - BGMSlider
   - SFXSlider
+  - RaiderNameInput
   layers:
   - Default
   - TransparentFX
