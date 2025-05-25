@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - BGM
+  - CharacterSheet
   layers:
   - Default
   - TransparentFX

@@ -1270,13 +1270,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1780618294}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 616232716}
   m_Layer: 0
   m_Name: CharacterSheet
-  m_TagString: Untagged
+  m_TagString: CharacterSheet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1924,11 +1924,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b76d4b5f77fbe4f9c5b01a3b73e531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  armorClass: 0
+  raiderName: 
+  raiderRace: 0
+  raiderRole: 0
+  alignment: 0
+  position: 0
+  story: 
+  hpMax: 0
+  hpCurrent: 0
+  armorClassTotal: 0
+  armorClassTemp: 0
   strength: 0
   intelligence: 0
   dexterity: 0
+  credits: 0
   acrobatics: 0
   athletics: 0
   database: 0
