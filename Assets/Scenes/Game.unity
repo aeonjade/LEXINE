@@ -653,8 +653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: -250.24005}
-  m_SizeDelta: {x: 200.7181, y: 71.2401}
+  m_AnchoredPosition: {x: 459, y: -100}
+  m_SizeDelta: {x: 195.4, y: 49.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896799741
 MonoBehaviour:
@@ -786,8 +786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: -175.62006}
-  m_SizeDelta: {x: 200.7181, y: 71.2401}
+  m_AnchoredPosition: {x: 459, y: 50}
+  m_SizeDelta: {x: 195.3969, y: 49.9553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &930569336
 MonoBehaviour:
@@ -1304,8 +1304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: -324.37994}
-  m_SizeDelta: {x: 200.7181, y: 71.2401}
+  m_AnchoredPosition: {x: 458.64, y: -24.979}
+  m_SizeDelta: {x: 194.68, y: 49.959}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1609202424
 MonoBehaviour:
@@ -1573,8 +1573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479.64, y: -250.12}
-  m_SizeDelta: {x: 200, y: 71}
+  m_AnchoredPosition: {x: 459.35995, y: -250}
+  m_SizeDelta: {x: 194.68, y: 49.958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002678314
 MonoBehaviour:
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 60
+  m_lineSpacing: 70
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1863,7 +1863,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Next
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 482f9deda8824f34b94d7f11f50c69fa, type: 2}
   m_sharedMaterial: {fileID: 5914023560049126430, guid: 482f9deda8824f34b94d7f11f50c69fa, type: 2}
