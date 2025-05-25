@@ -4,8 +4,8 @@ using UnityEngine;
 public class PanelFader : MonoBehaviour
 {
     [SerializeField] private CanvasGroup introCanvasGroup;
-    public float fadeDuration = 0.75f;
-    private const float FADE_DELAY = 0.75f;
+    public float fadeDuration = 0.5f;
+    private const float FADE_DELAY = 0.5f;
 
     void Start()
     {
