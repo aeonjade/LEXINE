@@ -10,18 +10,36 @@ public class VolumeSettings : MonoBehaviour
 
     [SerializeField] AudioSource BGMSource;
     [SerializeField] AudioSource SFXSource;
+    [SerializeField] private Toggle BGMToggle;
+    [SerializeField] private Toggle SFXToggle;
     [SerializeField] private AudioClip testSFX; // Add this field for test sound
-
 
     private bool isMusicMuted = false;
     private bool isSFXMuted = false;
     private bool isAdjusting = false;
     private bool isInitializing = false;
 
-
-
     void Start()
     {
+        // Load mute states
+        isMusicMuted = PlayerPrefs.GetInt("BGMMuted", 0) == 1;
+        isSFXMuted = PlayerPrefs.GetInt("SFXMuted", 0) == 1;
+
+        // Set up toggle listeners
+        BGMToggle.onValueChanged.AddListener(OnBGMToggleChanged);
+        SFXToggle.onValueChanged.AddListener(OnSFXToggleChanged);
+
+        // Set initial toggle states without triggering events
+        BGMToggle.SetIsOnWithoutNotify(!isMusicMuted);
+        SFXToggle.SetIsOnWithoutNotify(!isSFXMuted);
+
+        // Apply mute states
+        BGMSource.mute = isMusicMuted;
+        SFXSource.mute = isSFXMuted;
+        BGMSlider.interactable = !isMusicMuted;
+        SFXSlider.interactable = !isSFXMuted;
+
+        // Load volume values
         if (PlayerPrefs.HasKey("BGMVolume") && PlayerPrefs.HasKey("SFXVolume"))
         {
             LoadVolume();
@@ -35,21 +53,22 @@ public class VolumeSettings : MonoBehaviour
         }
     }
 
-    public void ToggleMusic()
+    public void OnBGMToggleChanged(bool isOn)
     {
-        isMusicMuted = !isMusicMuted;
+        isMusicMuted = !isOn;
         BGMSource.mute = isMusicMuted;
-
-        // Optional: You can also disable the slider when muted
         BGMSlider.interactable = !isMusicMuted;
+        PlayerPrefs.SetInt("BGMMuted", isMusicMuted ? 1 : 0);
+        PlayerPrefs.Save();
     }
-    public void ToggleSFX()
-    {
-        isSFXMuted = !isSFXMuted;
-        SFXSource.mute = isSFXMuted;
 
-        // Optional: You can also disable the slider when muted
+    public void OnSFXToggleChanged(bool isOn)
+    {
+        isSFXMuted = !isOn;
+        SFXSource.mute = isSFXMuted;
         SFXSlider.interactable = !isSFXMuted;
+        PlayerPrefs.SetInt("SFXMuted", isSFXMuted ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     public void SetMusicVolume()
