@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9128604589123815502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6584, y: -152}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -9128604589123815502}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -9128604589123815502}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "Emerging from the depths of the forest, you finally spot a break in
+    the trees\u2014not just another clearing, but something more. Just ahead, structures
+    rise from the mist, nestled between massive, ancient trees."
+  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
 --- !u!114 &-8788857595531650893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +89,113 @@ MonoBehaviour:
   entry: 
   exit: 
   dialogText: The shields absorb some of the impact, reducing hull breach damage.
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -4593982710790916606, guid: 9475ea064fb31da47b599813c4e2b1a3, type: 3}
+--- !u!114 &-8363985512746513435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5416, y: 248}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: -8363985512746513435}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: -6218144918761825374}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: -8363985512746513435}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -6889106931454968418}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: -8363985512746513435}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7140042342077480323}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: you chose the right path
+  dialogImage: {fileID: 8389134475083476877, guid: e64f25cadc5c3cb4db19132d591aafeb, type: 3}
+  difficultyCheckValue: 10
+  abilityCheck: 8
+--- !u!114 &-8363435086898487663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6744, y: -520}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -8363435086898487663}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -8363435086898487663}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "Emerging from the depths of the forest, you finally spot a break in
+    the trees\u2014not just another clearing, but something more. Just ahead, structures
+    rise from the mist, nestled between massive, ancient trees."
+  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
 --- !u!114 &-8183690181068999680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +209,7 @@ MonoBehaviour:
   m_Name: Exit
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 3688, y: -24}
+  position: {x: 7256, y: -200}
   ports:
     keys:
     - entry
@@ -69,10 +218,7 @@ MonoBehaviour:
       _node: {fileID: -8183690181068999680}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: exit
-        node: {fileID: 7784697177234536884}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -125,6 +271,56 @@ MonoBehaviour:
   exit: 
   dialogText: You manage to stabilize the descent slightly, reducing the crash impact.
   dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+--- !u!114 &-6889106931454968418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5656, y: 200}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -6889106931454968418}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: -8363985512746513435}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -6889106931454968418}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 768442546450757718}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "You detect an unusual energy signature buried under the rubble. It
+    doesn\u2019t match the Regulator, but it\u2019s artificial. You see a collapsed
+    console in the distance and you pry it open and, with some quick rewiring, disable
+    a still-active security protocol. The area is clear."
+  dialogImage: {fileID: 8389134475083476877, guid: e64f25cadc5c3cb4db19132d591aafeb, type: 3}
 --- !u!114 &-6449796424343540227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +367,68 @@ MonoBehaviour:
   entry: 
   exit: 
   dialogText: The system is too damaged to respond. Sparks fly as circuits overload.
-  dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+  dialogImage: {fileID: 4130640169021434097, guid: 0e44d666b4b47a947a797a105021a47a, type: 3}
+--- !u!114 &-6218144918761825374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9c6bc73318c8e42ab259a9dab93111, type: 3}
+  m_Name: Two Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5016, y: 152}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    values:
+    - _fieldName: entry
+      _node: {fileID: -6218144918761825374}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: b
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: -6218144918761825374}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8363985512746513435}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: -6218144918761825374}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: CONFIRM
+  b: GO BACK
+  dialogText: Leads to an old abandoned Guardian outpost
+  dialogImage: {fileID: 8389134475083476877, guid: e64f25cadc5c3cb4db19132d591aafeb, type: 3}
 --- !u!114 &-6194179036911280649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +478,68 @@ MonoBehaviour:
     into the hull. Sparks exploded from the control panels. The ship lurched violently,
     throwing you against the nearest surface.
   dialogImage: {fileID: -6470460504253458178, guid: d8ac2788e24ce174f8fae168bc998720, type: 3}
+--- !u!114 &-5133105252098366309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9c6bc73318c8e42ab259a9dab93111, type: 3}
+  m_Name: Two Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5000, y: -504}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    values:
+    - _fieldName: entry
+      _node: {fileID: -5133105252098366309}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: -5133105252098366309}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 3083106319362719230}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: -5133105252098366309}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: CONFIRM
+  b: GO BACK
+  dialogText: Overgrown with thick vines and strange pulsating flora, something lurks
+    within the shadows.
+  dialogImage: {fileID: -5099292496197868168, guid: c9c6f2f662e66d54fa1b38d79fe02ba4, type: 3}
 --- !u!114 &-4512625776927413810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,10 +598,109 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   a: Pilot the Ship
-  b: Activate Shield Reinforcements
+  b: Activate Shield
   dialogText: As the Star Princess spirals toward the surface of Lexine, the Raiders
     have precious moments to act. Each Raider must decide how to respond.
   dialogImage: {fileID: -6470460504253458178, guid: d8ac2788e24ce174f8fae168bc998720, type: 3}
+--- !u!114 &-4412876411088049067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4216, y: -24}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -4412876411088049067}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -914921736258856174}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -4412876411088049067}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -941370421937990652}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: 'The crew have been walking for hours, following the signal through
+    the towering alien trees. The canopy above glows faintly, casting strange patterns
+    of light across the undergrowth. '
+  dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
+--- !u!114 &-3135023289563006252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3736, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -3135023289563006252}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 7784697177234536884}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -3135023289563006252}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -914921736258856174}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "After a crash landing on an unknown planet, the crew\u2019s ship is
+    severely damaged, and its five core components are scattered across the landscape.\r\nOne
+    of these parts, the Power Regulator, has landed near a hidden village, where
+    the locals believe it has awakened their ancient protector\u2014the Spirit Guardian."
+  dialogImage: {fileID: 4130640169021434097, guid: 0e44d666b4b47a947a797a105021a47a, type: 3}
 --- !u!114 &-2735722344495122925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +802,106 @@ MonoBehaviour:
   actorImage: {fileID: 8274395459903716270, guid: cb425c47750e9cf4587dc52538c56dae, type: 3}
   backgroundMusic: 1
   slideInActor: 1
+--- !u!114 &-941370421937990652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4456, y: -24}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -941370421937990652}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -4412876411088049067}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -941370421937990652}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: Then, without warning, the terrain shifts. The dense forest splits
+    into three distinct paths, each one cloaked in mist, obscuring what lies beyond.
+  dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
+--- !u!114 &-914921736258856174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3976, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -914921736258856174}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -3135023289563006252}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -914921736258856174}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -4412876411088049067}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "After checking their equipment and setting their first course, the
+    crew picks up a faint distress signal\u2014a rhythmic pulse, too structured to
+    be natural. Tracing its source, they venture into the vast, uncharted wilderness
+    of Lexine, where ancient trees stretch toward a sky of unfamiliar hues. The air
+    hums with unseen energy, and strange flora react subtly to their presence, shifting
+    ever so slightly as if aware of the intruders.\n"
+  dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
 --- !u!114 &-787011625039771934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +933,94 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   exit: 
+--- !u!114 &-773325078961124916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48345d23cfc457a42a05795ee94e249f, type: 3}
+  m_Name: Three Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4712, y: -72}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    - c
+    values:
+    - _fieldName: entry
+      _node: {fileID: -773325078961124916}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -941370421937990652}
+        reroutePoints: []
+      - fieldName: b
+        node: {fileID: -5133105252098366309}
+        reroutePoints: []
+      - fieldName: b
+        node: {fileID: -6218144918761825374}
+        reroutePoints: []
+      - fieldName: b
+        node: {fileID: 7223079761840013333}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: -773325078961124916}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -5133105252098366309}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: -773325078961124916}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -6218144918761825374}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: c
+      _node: {fileID: -773325078961124916}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7223079761840013333}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: LEFT
+  b: RIGHT
+  c: MIDDLE
+  dialogText: "Ahead, the path splits into three\u2014left path, middle path, and
+    right path. Each route is choked with mist, the vegetation growing unnaturally
+    thick in some places, and eerily sparse in others. The undergrowth rustles with
+    unseen movement, and the sounds of alien wildlife shift into an uneasy silence.
+    The ground beneath your feet is uneven, the terrain uncertain."
+  dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
 --- !u!114 &-549249855485463606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +1102,86 @@ MonoBehaviour:
   - {fileID: -549249855485463606}
   - {fileID: -2735722344495122925}
   - {fileID: 7784697177234536884}
+  - {fileID: -3135023289563006252}
+  - {fileID: -914921736258856174}
+  - {fileID: -4412876411088049067}
+  - {fileID: -941370421937990652}
+  - {fileID: 8485743454905987218}
+  - {fileID: 4810401146920096027}
+  - {fileID: -6889106931454968418}
+  - {fileID: 7140042342077480323}
+  - {fileID: -773325078961124916}
+  - {fileID: 3083106319362719230}
+  - {fileID: -8363985512746513435}
+  - {fileID: 768442546450757718}
+  - {fileID: 7223288966572090328}
+  - {fileID: 4619827204161375249}
+  - {fileID: 7344571619960809735}
+  - {fileID: -5133105252098366309}
+  - {fileID: 7223079761840013333}
+  - {fileID: -6218144918761825374}
+  - {fileID: -9128604589123815502}
+  - {fileID: -8363435086898487663}
+  - {fileID: 2949354981606290735}
+  - {fileID: 2462700084468864141}
+--- !u!114 &768442546450757718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6312, y: -152}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 768442546450757718}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 7223288966572090328}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 4810401146920096027}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 4619827204161375249}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 7344571619960809735}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -6889106931454968418}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 768442546450757718}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "Emerging from the depths of the forest, you finally spot a break in
+    the trees\u2014not just another clearing, but something more. Just ahead, structures
+    rise from the mist, nestled between massive, ancient trees."
+  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
 --- !u!114 &2430139713229179363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +1230,92 @@ MonoBehaviour:
   dialogText: "JUNO\u2019s voice, now distorted from the ship\u2019s failing systems,
     gives one final directive:\r\n\"Impact imminent. Survive\u2026 and retaliate.\""
   dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+--- !u!114 &2462700084468864141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6984, y: -456}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 2462700084468864141}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 2462700084468864141}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "Emerging from the depths of the forest, you finally spot a break in
+    the trees\u2014not just another clearing, but something more. Just ahead, structures
+    rise from the mist, nestled between massive, ancient trees."
+  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+--- !u!114 &2949354981606290735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6856, y: 168}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 2949354981606290735}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 2949354981606290735}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "Emerging from the depths of the forest, you finally spot a break in
+    the trees\u2014not just another clearing, but something more. Just ahead, structures
+    rise from the mist, nestled between massive, ancient trees."
+  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
 --- !u!114 &2954292930402789505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,6 +1364,69 @@ MonoBehaviour:
   dialogText: 'JUNO: "Warning: Multiple enemy vessels detected. Shields at 47%. Immediate
     evasive action recommended."'
   dialogImage: {fileID: 6937817954938267909, guid: 7cd1e95c167d59742b87f06b4932e9ad, type: 3}
+--- !u!114 &3083106319362719230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5432, y: -488}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: 3083106319362719230}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: -5133105252098366309}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: 3083106319362719230}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 4810401146920096027}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: 3083106319362719230}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 8485743454905987218}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: you chose the left path
+  dialogImage: {fileID: -5099292496197868168, guid: c9c6f2f662e66d54fa1b38d79fe02ba4, type: 3}
+  difficultyCheckValue: 10
+  abilityCheck: 6
 --- !u!114 &3192300848648550602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +1533,102 @@ MonoBehaviour:
     of your ship tears through the Lexine atmosphere, a blazing streak against the
     planet\u2019s sky."
   dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+--- !u!114 &4619827204161375249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6008, y: -456}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 4619827204161375249}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 8485743454905987218}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 4619827204161375249}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 768442546450757718}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
+  dialogImage: {fileID: -6270953770400647376, guid: 7958dcf5e7e899849bf837b62a9e5aa0, type: 3}
+--- !u!114 &4810401146920096027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5720, y: -712}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 4810401146920096027}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: 3083106319362719230}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 4810401146920096027}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 768442546450757718}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "As your eyes adjust to the dim light, you make out the shapes of figures
+    crouched low in the underbrush. Whatever they are, they haven't attacked yet,
+    but they\u2019re watching you."
+  dialogImage: {fileID: -5099292496197868168, guid: c9c6f2f662e66d54fa1b38d79fe02ba4, type: 3}
 --- !u!114 &5070632335528887728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,6 +1803,165 @@ MonoBehaviour:
   dialogImage: {fileID: -4593982710790916606, guid: 9475ea064fb31da47b599813c4e2b1a3, type: 3}
   difficultyCheckValue: 12
   abilityCheck: 0
+--- !u!114 &7140042342077480323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5656, y: 456}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7140042342077480323}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: -8363985512746513435}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 7140042342077480323}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7344571619960809735}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "A dull, rhythmic hum echoes from within the rubble\u2014a sound that
+    wasn\u2019t there a moment ago. Then, suddenly, the hum shifts into an alert
+    tone. Something mechanical stirs. BATTLE ENCOUNTER TRIGGERS"
+  dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
+--- !u!114 &7223079761840013333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9c6bc73318c8e42ab259a9dab93111, type: 3}
+  m_Name: Two Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5016, y: -184}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7223079761840013333}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: c
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: 7223079761840013333}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7223288966572090328}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: 7223079761840013333}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: CONFIRM
+  b: GO BACK
+  dialogText: A winding but stable route through the forest, though eerie silence
+    fills the air.
+  dialogImage: {fileID: -1540426309290004842, guid: dbfe902f35f144241be78f833ed249c0, type: 3}
+--- !u!114 &7223288966572090328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5432, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7223288966572090328}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: 7223079761840013333}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 7223288966572090328}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 768442546450757718}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: 'The path ahead is eerily quiet. The usual sounds of alien wildlife
+    are absent, and even your own footsteps feel muffled. '
+  dialogImage: {fileID: -1540426309290004842, guid: dbfe902f35f144241be78f833ed249c0, type: 3}
 --- !u!114 &7337482455307433517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,6 +2009,53 @@ MonoBehaviour:
   exit: 
   dialogText: "JUNO, the ship\u2019s onboard AI, crackled to life over the comms."
   dialogImage: {fileID: 6937817954938267909, guid: 7cd1e95c167d59742b87f06b4932e9ad, type: 3}
+--- !u!114 &7344571619960809735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5992, y: 376}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7344571619960809735}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 7140042342077480323}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 7344571619960809735}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 768442546450757718}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
+  dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
 --- !u!114 &7784697177234536884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,7 +2093,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -8183690181068999680}
+        node: {fileID: -3135023289563006252}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -966,3 +2103,52 @@ MonoBehaviour:
   exit: 
   dialogText: END OF PROLOGUE
   dialogImage: {fileID: 3465286685962602723, guid: d1ae191895f341c488f731b44d9e5bf4, type: 3}
+--- !u!114 &8485743454905987218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5720, y: -456}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 8485743454905987218}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: 3083106319362719230}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 8485743454905987218}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 4619827204161375249}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "The air feels heavy, thick with an unfamiliar scent. Then\u2014movement.
+    A low growl rumbles from the shadows before dark shapes lunge toward you! TRIGGER
+    BATTLE ENCOUNTER"
+  dialogImage: {fileID: -6270953770400647376, guid: 7958dcf5e7e899849bf837b62a9e5aa0, type: 3}

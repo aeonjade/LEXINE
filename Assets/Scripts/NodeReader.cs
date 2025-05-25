@@ -56,7 +56,7 @@ public class NodeReader : MonoBehaviour
 
             buttonA.SetActive(true);
             buttonB.SetActive(true);
-
+            buttonC.SetActive(false);
             nextButtonGO.SetActive(false);
         }
         else if (node is ThreeChoiceDialog)
@@ -103,12 +103,14 @@ public class NodeReader : MonoBehaviour
 
             buttonA.SetActive(false);
             buttonB.SetActive(false);
+            buttonC.SetActive(false);
             nextButtonGO.SetActive(true);
         }
         else
         {
             buttonA.SetActive(false);
             buttonB.SetActive(false);
+            buttonC.SetActive(false);
 
             nextButtonGO.SetActive(true);
         }
@@ -146,10 +148,30 @@ public class NodeReader : MonoBehaviour
             }
             return node.GetOutputPort("exit").Connection.node as BaseNode;
         }
+        else if (node is ThreeChoiceDialog)
+        {
+            GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
+
+            TMP_Text buttonText = clickedButton.GetComponentInChildren<TMP_Text>();
+
+            if (buttonText.text == ("" + ((ThreeChoiceDialog)node).a))
+            {
+                return node.GetOutputPort("a").Connection.node as BaseNode;
+            }
+            if (buttonText.text == ("" + ((ThreeChoiceDialog)node).b))
+            {
+                return node.GetOutputPort("b").Connection.node as BaseNode;
+            }
+            if (buttonText.text == ("" + ((ThreeChoiceDialog)node).c))
+            {
+                return node.GetOutputPort("c").Connection.node as BaseNode;
+            }
+            return node.GetOutputPort("exit").Connection.node as BaseNode;
+        }
         else if (node is AbilityCheckNode)
         {
             int d20 = Random.Range(1, 21);
-            if (d20 + characterSheet.gameObject.GetComponent<CharacterStats>().survival >= ((AbilityCheckNode)node).getDC())
+            if (d20 + characterSheet.gameObject.GetComponent<CharacterStats>().database >= ((AbilityCheckNode)node).getDC())
             {
                 return node.GetOutputPort("success").Connection.node as BaseNode;
             }
