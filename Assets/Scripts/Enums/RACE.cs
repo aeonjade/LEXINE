@@ -1,4 +1,4 @@
 public enum RACE
 {
-    EARTHKIN, CYBORG, STEELFORGED, DEMONOID, HEXARI, DRAKO, XENTHARIAN
+    Earthkin, Cyborg, Steelforged, Demonoid, Hexari, Drako, Xentharian
 }

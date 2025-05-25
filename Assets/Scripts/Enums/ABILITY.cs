@@ -1,4 +1,4 @@
 public enum ABILITY
 {
-    ATHLETICS, ACROBATICS, DATABASE, DOMINATION, ELOQUENCE, INSTINCT, SENSORY, STEALTH, TECHNOLOGY
+    Athletics, Acrobatics, Database, Domination, Eloquence, Instinct, Sensory, Stealth, Technology
 }

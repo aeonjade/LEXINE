@@ -1,4 +1,4 @@
 public enum POSITION
 {
-    FRONTLINE, BACKLINE
+    Frontline, Backline
 }

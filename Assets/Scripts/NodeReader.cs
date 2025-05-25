@@ -170,23 +170,23 @@ public class NodeReader : MonoBehaviour
             ABILITY currentAbility = ((AbilityCheckNode)node).getAbility();
             switch (currentAbility)
             {
-                case ABILITY.ACROBATICS:
+                case ABILITY.Acrobatics:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().acrobatics);
-                case ABILITY.ATHLETICS:
+                case ABILITY.Athletics:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().athletics);
-                case ABILITY.DATABASE:
+                case ABILITY.Database:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().database);
-                case ABILITY.DOMINATION:
+                case ABILITY.Domination:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().domination);
-                case ABILITY.ELOQUENCE:
+                case ABILITY.Eloquence:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().eloquence);
-                case ABILITY.INSTINCT:
+                case ABILITY.Instinct:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().instinct);
-                case ABILITY.SENSORY:
+                case ABILITY.Sensory:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().sensory);
-                case ABILITY.STEALTH:
+                case ABILITY.Stealth:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().stealth);
-                case ABILITY.TECHNOLOGY:
+                case ABILITY.Technology:
                     return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().technology);
                 default:
                     return null;

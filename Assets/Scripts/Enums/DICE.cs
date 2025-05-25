@@ -1,4 +1,4 @@
 public enum DICE
 {
-    D4, D6, D8, D10, D12, D20
+    d4, d6, d8, d10, d12, d20
 }

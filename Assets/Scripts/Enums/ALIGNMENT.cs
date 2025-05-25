@@ -1,4 +1,4 @@
 public enum ALIGNMENT
 {
-    GOOD, NEUTRAL, EVIL
+    Good, Neutral, Evil
 }

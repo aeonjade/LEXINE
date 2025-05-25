@@ -1,4 +1,4 @@
 public enum DAMAGE_TYPE
 {
-    KINETIC, ENERGY, PHYSICAL, ELECTRIC, FIRE, WATER,
+    Kinetic, Energy, Physical, Electric, Fire, Water,
 }
