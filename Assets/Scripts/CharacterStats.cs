@@ -97,24 +97,28 @@ public class CharacterStats : MonoBehaviour
         switch (role)
         {
             case ROLE.Captain:
+                raiderRole = ROLE.Captain;
                 SetBaseStats(11, 13, 3, 0, 1);
                 eloquence = 2;
                 stealth = 1;
                 primaryWeapon = new Weapon("Combat Knife", MODIFIER.STR, 1, DICE.d6, WEAPON_TYPE.Melee, DAMAGE_TYPE.Physical);
                 break;
             case ROLE.Reaper:
+                raiderRole = ROLE.Reaper;
                 SetBaseStats(10, 12, 0, 3, 2);
                 domination = 2;
                 acrobatics = 1;
                 primaryWeapon = new Weapon("Light Pistol", MODIFIER.DEX, 1, DICE.d6, WEAPON_TYPE.Ranged, DAMAGE_TYPE.Kinetic);
                 break;
             case ROLE.Engineer:
+                raiderRole = ROLE.Engineer;
                 SetBaseStats(12, 14, 2, 1, 0);
                 technology = 2;
                 athletics = 1;
                 primaryWeapon = new Weapon("Reinforced Gauntlet", MODIFIER.STR, 1, DICE.d6, WEAPON_TYPE.Melee, DAMAGE_TYPE.Physical);
                 break;
             case ROLE.Surgeon:
+                raiderRole = ROLE.Surgeon;
                 SetBaseStats(9, 11, 1, 2, 3);
                 sensory = 2;
                 database = 1;
@@ -138,6 +142,7 @@ public class CharacterStats : MonoBehaviour
         switch (race)
         {
             case RACE.Earthkin:
+                raiderRace = RACE.Earthkin;
                 strength += 1;
                 dexterity += 1;
                 intelligence += 1;
@@ -145,26 +150,31 @@ public class CharacterStats : MonoBehaviour
                 instinct += 1;
                 break;
             case RACE.Cyborg:
+                raiderRace = RACE.Cyborg;
                 intelligence += 2;
                 technology += 2;
                 sensory += 1;
                 break;
             case RACE.Steelforged:
+                raiderRace = RACE.Steelforged;
                 strength += 1;
                 database += 2;
                 technology += 1;
                 break;
             case RACE.Demonoid:
+                raiderRace = RACE.Demonoid;
                 strength += 2;
                 domination += 2;
                 eloquence += 1;
                 break;
             case RACE.Hexari:
+                raiderRace = RACE.Hexari;
                 dexterity += 1;
                 instinct += 2;
                 athletics += 1;
                 break;
             case RACE.Drako:
+                raiderRace = RACE.Drako;
                 hpMax += 2;
                 hpCurrent = hpMax;
                 acTotal += 1;
@@ -172,6 +182,7 @@ public class CharacterStats : MonoBehaviour
                 acrobatics += 1;
                 break;
             case RACE.Xentharian:
+                raiderRace = RACE.Xentharian;
                 dexterity += 2;
                 stealth += 2;
                 domination += 1;
@@ -185,6 +196,14 @@ public class CharacterStats : MonoBehaviour
         ChooseRole(ROLE.Captain);
         ChooseRace(RACE.Earthkin);
         alignment = ALIGNMENT.Neutral;
+        looks1 = "Well-Groomed";
+        looks2 = "Tall and Imposing";
+        looks3 = "Sharp Eyes";
+        attitude1 = "Calculated and Precise";
+        attitude2 = "Diplomatic";
+        attitude3 = "Mysterious";
+        position = POSITION.Frontline;
+        story = "A courageous space raider from a land unknown.";
     }
 
     public void PlayAsXyril()
@@ -193,6 +212,14 @@ public class CharacterStats : MonoBehaviour
         ChooseRole(ROLE.Surgeon);
         ChooseRace(RACE.Cyborg);
         alignment = ALIGNMENT.Neutral;
+        looks1 = "Pure Clean-handed";
+        looks2 = "Well-groomed";
+        looks3 = "Elegant Uniform";
+        attitude1 = "Warm-hearted";
+        attitude2 = "Calculated";
+        attitude3 = "Calm and Kind";
+        position = POSITION.Backline;
+        story = "A master of their trade from a faraway land.";
     }
 
     private void CreateCharacter()
