@@ -3,8 +3,20 @@ using UnityEngine;
 
 public class PanelFader : MonoBehaviour
 {
+    [SerializeField] private CanvasGroup introCanvasGroup;
     public float fadeDuration = 0.5f;
     private const float FADE_DELAY = 0.5f;
+
+    void Start()
+    {
+        StartCoroutine(InitialFadeCoroutine());
+    }
+
+    private IEnumerator InitialFadeCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        FadeInDelayed(introCanvasGroup);
+    }
 
     public void FadeIn(CanvasGroup canvasGroup)
     {
@@ -38,4 +50,6 @@ public class PanelFader : MonoBehaviour
                 canvasGroup.gameObject.SetActive(false);
             });
     }
+
+
 }
