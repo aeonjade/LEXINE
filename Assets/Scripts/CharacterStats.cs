@@ -181,7 +181,9 @@ public class CharacterStats : MonoBehaviour
 
     public void PlayAsEien()
     {
-
+        ChooseRole(ROLE.CAPTAIN);
+        ChooseRace(RACE.EARTHKIN);
+        alignment = ALIGNMENT.NEUTRAL;
     }
 
     public void PlayAsXyril()
