@@ -48,7 +48,7 @@ MonoBehaviour:
   dialogText: "As the players arrive into the village, the players find Elder\u2019s
     Grove, a village built around massive trees, lit by bioluminescent plants. The
     villagers worship the Spirit Guardian, believing the Power Regulator is its heart."
-  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+  dialogImage: {fileID: 2960402581040015946, guid: 6e441843524b67f40ad6f50c707b5ca6, type: 3}
 --- !u!114 &-8788857595531650893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     emergency protocols to prevent a catastrophic shutdown. The energy pulses slow,
     and with a final precise movement, you disconnect the Power Regulator from its
     core."
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 3
   slideInActor: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   exit: 
   dialogText: The players tried their best to grab the villager but failed to do
     so and they witnessed the villager vaporized by the energy field.
-  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+  dialogImage: {fileID: 4164744761163438241, guid: 9a818b7ab82e6b841bec0ffd086a54ee, type: 3}
 --- !u!114 &-8278379544381830909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
     Suddenly, the Guardian twitches violently, its movements erratic, as though fighting
     an internal battle. Its voice, now fragmented, lets out glitching, broken sentences:
     \"Error\u2026 Stability compromised\u2026 Emergency\u2014Override\u2026 Failing\u2026\""
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 8102358098348255977, guid: 6307a5ae7b0f17845b60a7a91d5e40e5, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 2
   slideInActor: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
   a: CONFIRM
   b: GO BACK
   dialogText: Steal the Power Regulator & Escape
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 6894999169920593895, guid: 5f09e46f7a56f9d459ee3d03fb635ddf, type: 3}
 --- !u!114 &-7394822273520409996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   success: 
   failed: 
   dialogText: Roll Technology Check
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
   difficultyCheckValue: 12
   abilityCheck: 8
 --- !u!114 &-6449796424343540227
@@ -773,7 +773,7 @@ MonoBehaviour:
     Flowers
 
 '
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 4164744761163438241, guid: 9a818b7ab82e6b841bec0ffd086a54ee, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 3
   slideInActor: 0
@@ -1149,7 +1149,7 @@ MonoBehaviour:
   dialogText: The villagers stand behind you, their expressions a mix of hope, fear,
     and desperation. Some whisper prayers, while others clutch makeshift weapons,
     uncertain of what comes next.
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -7371509505491802261, guid: 357bef7674029b14aaec1b36269a8ffc, type: 3}
 --- !u!114 &-1030083742840372963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,7 +1200,7 @@ MonoBehaviour:
     slot with precision and silence, disconnecting it in one final movement. The
     Guardian does not react. The villagers do not awaken. By the time anyone notices,
     you are already far from the village, the Power Regulator in your grasp.
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 3
   slideInActor: 0
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   entry: 
   exit: 
   dialogText: You now have the Power Regulator!
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 5181654206020448988, guid: 093c573fdb24d4b4ab679c2a5683df78, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 3
   slideInActor: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   success: 
   failed: 
   dialogText: Roll Stealth Check
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
   difficultyCheckValue: 17
   abilityCheck: 7
 --- !u!114 &11400000
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   dialogText: 'The Guardian looms before you, its massive frame trembling with unstable
     energy. The Power Regulator hums faintly from within its chest, its glow flickering
     erratically. '
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -7371509505491802261, guid: 357bef7674029b14aaec1b36269a8ffc, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 0
   slideInActor: 0
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   dialogText: "Emerging from the depths of the forest, you finally spot a break in
     the trees\u2014not just another clearing, but something more. Just ahead, structures
     rise from the mist, nestled between massive, ancient trees."
-  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+  dialogImage: {fileID: 6067145324769712725, guid: 23c35aae92a3b044c8388b3416d1cc05, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 2
   slideInActor: 0
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   failed: 
   dialogText: You must act quickly to save the villager! The players must roll Athletic
     Check 1d20
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 4164744761163438241, guid: 9a818b7ab82e6b841bec0ffd086a54ee, type: 3}
   difficultyCheckValue: 12
   abilityCheck: 0
 --- !u!114 &1467315653923116454
@@ -1851,7 +1851,7 @@ MonoBehaviour:
   dialogText: "As you pull the Power Regulator free, the Guardian\u2019s core surges
     violently, sending out arcs of unstable energy.  With one last desperate pulse,
     a shockwave blasts outward, sending dust and debris flying. Then, it stops."
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 8102358098348255977, guid: 6307a5ae7b0f17845b60a7a91d5e40e5, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 2
   slideInActor: 0
@@ -1941,7 +1941,7 @@ MonoBehaviour:
     it may end the Guardian forever? Do you stabilize it, ensuring it remains a protector
     of the village? Or do you take what you need and escape, leaving the Guardian
     to its fate?"
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -7371509505491802261, guid: 357bef7674029b14aaec1b36269a8ffc, type: 3}
 --- !u!114 &2430139713229179363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,7 +2205,7 @@ MonoBehaviour:
     redirecting energy to restore balance. The Guardian shudders, then steadies,
     its glowing eyes focusing on you for the first time. A deep, metallic voice\u2014distorted
     but understandable\u2014echoes through the village."
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -5622901713081898559, guid: be957959de0155549b3bc90e727aeb99, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 3
   slideInActor: 0
@@ -2582,7 +2582,7 @@ MonoBehaviour:
   a: CONFIRM
   b: GO BACK
   dialogText: Reprogram the Guardian
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
 --- !u!114 &5827062099819717981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,7 +2629,7 @@ MonoBehaviour:
     its system detecting the sudden energy balance loss. A loud, mechanical screech
     reverberates through the air as its frame spasms uncontrollably. A blaring alarm
     echoes through the village, waking its inhabitants.
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
   actorImage: {fileID: 0}
   backgroundMusic: 2
   slideInActor: 0
@@ -2858,7 +2858,7 @@ MonoBehaviour:
   dialogText: 'Shut Down the Guardian & Take the Power Regulator.
 
 '
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: -1045133410153605164, guid: 5f0680c93cfc85d47a1e51e19a4fd7e4, type: 3}
 --- !u!114 &7223079761840013333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3123,7 +3123,7 @@ MonoBehaviour:
   success: 
   failed: 
   dialogText: Roll Database Check
-  dialogImage: {fileID: 0}
+  dialogImage: {fileID: 6894999169920593895, guid: 5f09e46f7a56f9d459ee3d03fb635ddf, type: 3}
   difficultyCheckValue: 14
   abilityCheck: 2
 --- !u!114 &7784697177234536884
