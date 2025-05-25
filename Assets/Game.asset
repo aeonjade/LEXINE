@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Simple Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1064, y: -344}
+  position: {x: 1784, y: 24}
   ports:
     keys:
     - entry
@@ -37,7 +37,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -8183690181068999680}
+        node: {fileID: 4017793372879575933}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: win
+  dialogText: The shields absorb some of the impact, reducing hull breach damage.
   dialogImage: {fileID: 0}
 --- !u!114 &-8183690181068999680
 MonoBehaviour:
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: Exit
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1672, y: 40}
+  position: {x: 3688, y: -24}
   ports:
     keys:
     - entry
@@ -71,19 +71,60 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: exit
-        node: {fileID: 3907673538062728438}
-        reroutePoints: []
-      - fieldName: exit
-        node: {fileID: -6449796424343540227}
-        reroutePoints: []
-      - fieldName: exit
-        node: {fileID: -8788857595531650893}
+        node: {fileID: 7784697177234536884}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
+--- !u!114 &-7394822273520409996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1832, y: -568}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -7394822273520409996}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: 5656631199617435435}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -7394822273520409996}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 4017793372879575933}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: You manage to stabilize the descent slightly, reducing the crash impact.
+  dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
 --- !u!114 &-6449796424343540227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +138,7 @@ MonoBehaviour:
   m_Name: Simple Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1064, y: -88}
+  position: {x: 1784, y: 328}
   ports:
     keys:
     - entry
@@ -121,7 +162,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -8183690181068999680}
+        node: {fileID: 4017793372879575933}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -129,8 +170,57 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: lose
-  dialogImage: {fileID: 0}
+  dialogText: The system is too damaged to respond. Sparks fly as circuits overload.
+  dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+--- !u!114 &-6194179036911280649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 552, y: -72}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -6194179036911280649}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 2954292930402789505}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -6194179036911280649}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 5070632335528887728}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: A shudder ran through the ship as a bolt of searing energy fire slammed
+    into the hull. Sparks exploded from the control panels. The ship lurched violently,
+    throwing you against the nearest surface.
+  dialogImage: {fileID: -6470460504253458178, guid: d8ac2788e24ce174f8fae168bc998720, type: 3}
 --- !u!114 &-4512625776927413810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +234,7 @@ MonoBehaviour:
   m_Name: Multiple Choice Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 360, y: -8}
+  position: {x: 1128, y: -8}
   ports:
     keys:
     - entry
@@ -157,7 +247,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: exit
-        node: {fileID: 7337482455307433517}
+        node: {fileID: 5070632335528887728}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -169,7 +259,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 3907673538062728438}
+        node: {fileID: 5656631199617435435}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -188,10 +278,59 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   entry: 
-  a: go the the left
-  b: don't move
-  dialogText: what will you do?
-  dialogImage: {fileID: 0}
+  a: Pilot the Ship
+  b: Activate Shield Reinforcements
+  dialogText: As the Star Princess spirals toward the surface of Lexine, the Raiders
+    have precious moments to act. Each Raider must decide how to respond.
+  dialogImage: {fileID: -6470460504253458178, guid: d8ac2788e24ce174f8fae168bc998720, type: 3}
+--- !u!114 &-2735722344495122925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3176, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -2735722344495122925}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -549249855485463606}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -2735722344495122925}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7784697177234536884}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "\"You are stranded on Lexine. Your ship is gone. But the fight isn\u2019t
+    over.\""
+  dialogImage: {fileID: 3465286685962602723, guid: d1ae191895f341c488f731b44d9e5bf4, type: 3}
 --- !u!114 &-2140442321042506832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,8 +376,11 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: Hello, Sounds here
-  dialogImage: {fileID: 0}
+  dialogText: "The hum of the Star Princess\u2019 engines was a comforting sound\u2014until
+    it wasn\u2019t. Xentharians blared across the ship as red warning lights flickered
+    on the consoles. The screen in front of you showed the worst-case scenario: three
+    alien ships closing in fast, weapons already hot."
+  dialogImage: {fileID: -855298285791758126, guid: b399609d53e20c94a932489cd47ff8bf, type: 3}
   actorImage: {fileID: 8274395459903716270, guid: cb425c47750e9cf4587dc52538c56dae, type: 3}
   backgroundMusic: 1
   slideInActor: 1
@@ -273,6 +415,55 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   exit: 
+--- !u!114 &-549249855485463606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2904, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -549249855485463606}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 2430139713229179363}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -549249855485463606}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -2735722344495122925}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "\"When you awaken, the Star Princess is in ruins. Smoke rises from
+    the wreckage. Strange alien flora surrounds you, glowing faintly under an unfamiliar
+    sky. The alien enemy ships are nowhere to be seen\u2014for now.\""
+  dialogImage: {fileID: 3465286685962602723, guid: d1ae191895f341c488f731b44d9e5bf4, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,12 +481,22 @@ MonoBehaviour:
   - {fileID: 7337482455307433517}
   - {fileID: -8183690181068999680}
   - {fileID: -4512625776927413810}
-  - {fileID: 3907673538062728438}
   - {fileID: 6330349285251545976}
   - {fileID: -8788857595531650893}
   - {fileID: -6449796424343540227}
   - {fileID: -2140442321042506832}
---- !u!114 &3907673538062728438
+  - {fileID: 2954292930402789505}
+  - {fileID: -6194179036911280649}
+  - {fileID: 5070632335528887728}
+  - {fileID: 5656631199617435435}
+  - {fileID: -7394822273520409996}
+  - {fileID: 3192300848648550602}
+  - {fileID: 4017793372879575933}
+  - {fileID: 2430139713229179363}
+  - {fileID: -549249855485463606}
+  - {fileID: -2735722344495122925}
+  - {fileID: 7784697177234536884}
+--- !u!114 &2430139713229179363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,14 +509,265 @@ MonoBehaviour:
   m_Name: Simple Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 808, y: 168}
+  position: {x: 2632, y: -40}
   ports:
     keys:
     - entry
     - exit
     values:
     - _fieldName: entry
-      _node: {fileID: 3907673538062728438}
+      _node: {fileID: 2430139713229179363}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 4017793372879575933}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 2430139713229179363}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -549249855485463606}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "JUNO\u2019s voice, now distorted from the ship\u2019s failing systems,
+    gives one final directive:\r\n\"Impact imminent. Survive\u2026 and retaliate.\""
+  dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+--- !u!114 &2954292930402789505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 312, y: -56}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 2954292930402789505}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 7337482455307433517}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 2954292930402789505}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -6194179036911280649}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: 'JUNO: "Warning: Multiple enemy vessels detected. Shields at 47%. Immediate
+    evasive action recommended."'
+  dialogImage: {fileID: 6937817954938267909, guid: 7cd1e95c167d59742b87f06b4932e9ad, type: 3}
+--- !u!114 &3192300848648550602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1832, y: -264}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 3192300848648550602}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: 5656631199617435435}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 3192300848648550602}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 4017793372879575933}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: The controls are unresponsive, and the ship continues to plummet at
+    full speed.
+  dialogImage: {fileID: -4178046375966092550, guid: 942cb5cf43dc07a47a5d9912d33ffd5c, type: 3}
+--- !u!114 &4017793372879575933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2344, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 4017793372879575933}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -6449796424343540227}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -8788857595531650893}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 3192300848648550602}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -7394822273520409996}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 4017793372879575933}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 2430139713229179363}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "Despite your efforts, the Star Princess is doomed. The burning wreckage
+    of your ship tears through the Lexine atmosphere, a blazing streak against the
+    planet\u2019s sky."
+  dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
+--- !u!114 &5070632335528887728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 824, y: -56}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 5070632335528887728}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -6194179036911280649}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 5070632335528887728}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -4512625776927413810}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: 'JUNO: "Critical damage sustained. Emergency landing protocol initiated.
+    Raiders, brace for impact."'
+  dialogImage: {fileID: -6470460504253458178, guid: d8ac2788e24ce174f8fae168bc998720, type: 3}
+--- !u!114 &5656631199617435435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1528, y: -424}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: 5656631199617435435}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
@@ -326,22 +778,37 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-    - _fieldName: exit
-      _node: {fileID: 3907673538062728438}
+    - _fieldName: success
+      _node: {fileID: 5656631199617435435}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -8183690181068999680}
+        node: {fileID: -7394822273520409996}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: 5656631199617435435}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 3192300848648550602}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
-  exit: 
-  dialogText: Go Left
-  dialogImage: {fileID: 8274395459903716270, guid: cb425c47750e9cf4587dc52538c56dae, type: 3}
+  success: 
+  failed: 
+  dialogText: A Raider Attempts to Pilot the ship and rolls D20!
+  dialogImage: {fileID: -4593982710790916606, guid: 9475ea064fb31da47b599813c4e2b1a3, type: 3}
+  difficultyCheckValue: 14
+  abilityCheck: 0
 --- !u!114 &6330349285251545976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +822,7 @@ MonoBehaviour:
   m_Name: Ability Check
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 776, y: -264}
+  position: {x: 1528, y: 136}
   ports:
     keys:
     - entry
@@ -401,8 +868,8 @@ MonoBehaviour:
   entry: 
   success: 
   failed: 
-  dialogText: See if someone is hiding
-  dialogImage: {fileID: 0}
+  dialogText: A Raider Attempts to Activate Shield Reinforcements and rolls D20!
+  dialogImage: {fileID: -4593982710790916606, guid: 9475ea064fb31da47b599813c4e2b1a3, type: 3}
   difficultyCheckValue: 12
   abilityCheck: 0
 --- !u!114 &7337482455307433517
@@ -442,7 +909,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -4512625776927413810}
+        node: {fileID: 2954292930402789505}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -450,5 +917,52 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: Hi
-  dialogImage: {fileID: 8274395459903716270, guid: cb425c47750e9cf4587dc52538c56dae, type: 3}
+  dialogText: "JUNO, the ship\u2019s onboard AI, crackled to life over the comms."
+  dialogImage: {fileID: 6937817954938267909, guid: 7cd1e95c167d59742b87f06b4932e9ad, type: 3}
+--- !u!114 &7784697177234536884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3448, y: -40}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7784697177234536884}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -2735722344495122925}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 7784697177234536884}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8183690181068999680}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: END OF PROLOGUE
+  dialogImage: {fileID: 3465286685962602723, guid: d1ae191895f341c488f731b44d9e5bf4, type: 3}

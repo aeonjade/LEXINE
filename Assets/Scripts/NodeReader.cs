@@ -20,9 +20,10 @@ public class NodeReader : MonoBehaviour
     public GameObject characterSheet;
     public TMP_Text buttonAText;
     public TMP_Text buttonBText;
+    public TMP_Text buttonCText;
     public GameObject buttonA;
     public GameObject buttonB;
-
+    public GameObject buttonC;
     public GameObject nextButtonGO;
 
     void Start()
@@ -48,14 +49,24 @@ public class NodeReader : MonoBehaviour
         backgroundImage = node.getSprite();
         ImageGO.gameObject.GetComponent<Image>().sprite = backgroundImage;
 
-        if (node is MultipleChoiceDialog)
+        if (node is TwoChoiceDialog)
         {
-            buttonAText.text = "" + ((MultipleChoiceDialog)node).a;
-            buttonBText.text = "" + ((MultipleChoiceDialog)node).b;
+            buttonAText.text = "" + ((TwoChoiceDialog)node).a;
+            buttonBText.text = "" + ((TwoChoiceDialog)node).b;
 
             buttonA.SetActive(true);
             buttonB.SetActive(true);
 
+            nextButtonGO.SetActive(false);
+        }
+        else if (node is ThreeChoiceDialog)
+        {
+            buttonAText.text = "" + ((ThreeChoiceDialog)node).a;
+            buttonBText.text = "" + ((ThreeChoiceDialog)node).b;
+            buttonCText.text = "" + ((ThreeChoiceDialog)node).c;
+            buttonA.SetActive(true);
+            buttonB.SetActive(true);
+            buttonC.SetActive(true);
             nextButtonGO.SetActive(false);
         }
         else if (node is SimpleDialogV2)
@@ -119,17 +130,17 @@ public class NodeReader : MonoBehaviour
 
     private BaseNode GetNextNode(BaseNode node)
     {
-        if (node is MultipleChoiceDialog)
+        if (node is TwoChoiceDialog)
         {
             GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
 
             TMP_Text buttonText = clickedButton.GetComponentInChildren<TMP_Text>();
 
-            if (buttonText.text == ("" + ((MultipleChoiceDialog)node).a))
+            if (buttonText.text == ("" + ((TwoChoiceDialog)node).a))
             {
                 return node.GetOutputPort("a").Connection.node as BaseNode;
             }
-            if (buttonText.text == ("" + ((MultipleChoiceDialog)node).b))
+            if (buttonText.text == ("" + ((TwoChoiceDialog)node).b))
             {
                 return node.GetOutputPort("b").Connection.node as BaseNode;
             }
