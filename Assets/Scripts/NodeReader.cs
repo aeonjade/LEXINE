@@ -17,7 +17,7 @@ public class NodeReader : MonoBehaviour
     public GameObject ImageGO;
     public NodeGraph graph;
     public BaseNode currentNode;
-    public GameObject characterSheet;
+    private GameObject characterSheet;
     public TMP_Text buttonAText;
     public TMP_Text buttonBText;
     public TMP_Text buttonCText;
@@ -30,10 +30,7 @@ public class NodeReader : MonoBehaviour
     {
         // Get the first AudioSource in the scene
         bgmSource = GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>();
-        if (bgmSource == null)
-        {
-            Debug.LogWarning("No AudioSource found in the scene!");
-        }
+        characterSheet = GameObject.FindGameObjectWithTag("CharacterSheet");
         currentNode = GetStartNode();
         AdvanceDialog();
     }
