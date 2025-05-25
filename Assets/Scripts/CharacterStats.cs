@@ -36,6 +36,7 @@ public class CharacterStats : MonoBehaviour
     public int sensory;
     public int stealth;
     public int technology;
+    public Skill starterSkill;
     public bool hasPowerRegulator = false;
     public bool hasMainDrive = false;
     public bool hasStabilizerUnit = false;
@@ -85,6 +86,7 @@ public class CharacterStats : MonoBehaviour
         sensory = 0;
         stealth = 0;
         technology = 0;
+        starterSkill = null;
 
         // Reset ship parts
         hasPowerRegulator = false;
@@ -199,6 +201,8 @@ public class CharacterStats : MonoBehaviour
         raiderName = "Eien";
         ChooseRole(ROLE.Captain);
         ChooseRace(RACE.Earthkin);
+        starterSkill = new Skill("Tactical Orders", "Bonus Action", 1, "Turn",
+        "Issue a quick battlefield directive to an ally. Once per turn, grant an ally +1d4 to their next attack roll.");
         alignment = ALIGNMENT.Neutral;
         looks1 = "Well-Groomed";
         looks2 = "Tall and Imposing";
@@ -215,6 +219,8 @@ public class CharacterStats : MonoBehaviour
         raiderName = "Xyril";
         ChooseRole(ROLE.Surgeon);
         ChooseRace(RACE.Cyborg);
+        starterSkill = new Skill("Nano-Stitcher", "Action", 2, "Long Rest",
+        "Deploys microscopic repair nanites to rapidly seal wounds. Restore 1d6 HP.");
         alignment = ALIGNMENT.Neutral;
         looks1 = "Pure Clean-handed";
         looks2 = "Well-groomed";

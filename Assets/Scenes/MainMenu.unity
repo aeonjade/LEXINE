@@ -305,6 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44534108}
   - component: {fileID: 44534109}
+  - component: {fileID: 44534110}
   m_Layer: 0
   m_Name: CustomizeRaider
   m_TagString: Untagged
@@ -343,6 +344,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &44534110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44534107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8fd4818d50bf04fbf9295efa1bfa41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStats: {fileID: 616232716}
 --- !u!1 &50666389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,7 +2411,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 281779553}
   m_OnClick:
     m_PersistentCalls:
