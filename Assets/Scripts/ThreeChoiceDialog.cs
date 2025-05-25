@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
-public class MultipleChoiceDialog : BaseNode
+public class ThreeChoiceDialog : BaseNode
 {
 
 	[Input] public string entry;
 	[Output] public string a;
 	[Output] public string b;
+    [Output] public string c;
 
-	[TextArea(7, 20)]
+    [TextArea(7, 20)]
 
 	public string dialogText;
 	public Sprite dialogImage;

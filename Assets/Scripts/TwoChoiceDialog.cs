@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MultipleChoiceDialog : BaseNode
+public class TwoChoiceDialog : BaseNode
 {
 
 	[Input] public string entry;
