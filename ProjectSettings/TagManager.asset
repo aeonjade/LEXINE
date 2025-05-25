@@ -6,6 +6,10 @@ TagManager:
   tags:
   - BGM
   - CharacterSheet
+  - BGMToggle
+  - SFXToggle
+  - BGMSlider
+  - SFXSlider
   layers:
   - Default
   - TransparentFX

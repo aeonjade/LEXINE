@@ -5,13 +5,12 @@ using UnityEngine.UI;
 public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private Slider BGMSlider;
-    [SerializeField] private Slider SFXSlider;
-
     [SerializeField] AudioSource BGMSource;
     [SerializeField] AudioSource SFXSource;
-    [SerializeField] private Toggle BGMToggle;
-    [SerializeField] private Toggle SFXToggle;
+    private Toggle BGMToggle;
+    private Toggle SFXToggle;
+    private Slider BGMSlider;
+    private Slider SFXSlider;
     [SerializeField] private AudioClip testSFX; // Add this field for test sound
 
     private bool isMusicMuted = false;
@@ -21,6 +20,9 @@ public class VolumeSettings : MonoBehaviour
 
     void Start()
     {
+        // Assign Controls
+        AssignControls();
+
         // Load mute states
         isMusicMuted = PlayerPrefs.GetInt("BGMMuted", 0) == 1;
         isSFXMuted = PlayerPrefs.GetInt("SFXMuted", 0) == 1;
@@ -51,6 +53,14 @@ public class VolumeSettings : MonoBehaviour
             audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
             PlayerPrefs.SetFloat("SFXVolume", SFXVolume);
         }
+    }
+
+    public void AssignControls()
+    {
+        BGMToggle = GameObject.FindGameObjectWithTag("BGMToggle").GetComponent<Toggle>();
+        SFXToggle = GameObject.FindGameObjectWithTag("SFXToggle").GetComponent<Toggle>();
+        BGMSlider = GameObject.FindGameObjectWithTag("BGMSlider").GetComponent<Slider>();
+        SFXSlider = GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>();
     }
 
     public void OnBGMToggleChanged(bool isOn)

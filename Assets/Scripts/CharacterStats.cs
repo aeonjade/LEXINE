@@ -40,7 +40,7 @@ public class CharacterStats : MonoBehaviour
     public bool hasNavigationModule = false;
     public bool hasShieldGenerator = false;
 
-    public void ChooseRole()
+    public void ChooseRole(ROLE role)
     {
 
     }
