@@ -7,6 +7,7 @@ public class MultipleChoiceDialog : BaseNode
 	[Output] public string a;
 	[Output] public string b;
 
+
 	[TextArea(7, 20)]
 
 	public string dialogText;
