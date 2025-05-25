@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Simple Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6584, y: -152}
+  position: {x: 6584, y: -136}
   ports:
     keys:
     - entry
@@ -23,7 +23,10 @@ MonoBehaviour:
       _node: {fileID: -9128604589123815502}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: exit
+        node: {fileID: 788211073390995732}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -32,16 +35,19 @@ MonoBehaviour:
       _node: {fileID: -9128604589123815502}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: entry
+        node: {fileID: 2511590561162074982}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: "Emerging from the depths of the forest, you finally spot a break in
-    the trees\u2014not just another clearing, but something more. Just ahead, structures
-    rise from the mist, nestled between massive, ancient trees."
+  dialogText: "As the players arrive into the village, the players find Elder\u2019s
+    Grove, a village built around massive trees, lit by bioluminescent plants. The
+    villagers worship the Spirit Guardian, believing the Power Regulator is its heart."
   dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
 --- !u!114 &-8788857595531650893
 MonoBehaviour:
@@ -90,6 +96,59 @@ MonoBehaviour:
   exit: 
   dialogText: The shields absorb some of the impact, reducing hull breach damage.
   dialogImage: {fileID: -4593982710790916606, guid: 9475ea064fb31da47b599813c4e2b1a3, type: 3}
+--- !u!114 &-8457816105801517341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9368, y: -984}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -8457816105801517341}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: -6664371384952341685}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -8457816105801517341}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "You carefully access the Guardian\u2019s inner systems, bypassing
+    emergency protocols to prevent a catastrophic shutdown. The energy pulses slow,
+    and with a final precise movement, you disconnect the Power Regulator from its
+    core."
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 3
+  slideInActor: 0
 --- !u!114 &-8363985512746513435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +225,7 @@ MonoBehaviour:
   m_Name: Simple Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6744, y: -520}
+  position: {x: 7480, y: 40}
   ports:
     keys:
     - entry
@@ -176,7 +235,10 @@ MonoBehaviour:
       _node: {fileID: -8363435086898487663}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: failed
+        node: {fileID: 1396691848060579007}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -185,17 +247,72 @@ MonoBehaviour:
       _node: {fileID: -8363435086898487663}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: entry
+        node: {fileID: 357140167063657019}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: "Emerging from the depths of the forest, you finally spot a break in
-    the trees\u2014not just another clearing, but something more. Just ahead, structures
-    rise from the mist, nestled between massive, ancient trees."
+  dialogText: The players tried their best to grab the villager but failed to do
+    so and they witnessed the villager vaporized by the energy field.
   dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+--- !u!114 &-8278379544381830909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9368, y: -24}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -8278379544381830909}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: 7381913756421021830}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -8278379544381830909}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "The system rejects your input\u2014warnings flash across the interface.
+    Suddenly, the Guardian twitches violently, its movements erratic, as though fighting
+    an internal battle. Its voice, now fragmented, lets out glitching, broken sentences:
+    \"Error\u2026 Stability compromised\u2026 Emergency\u2014Override\u2026 Failing\u2026\""
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 2
+  slideInActor: 0
 --- !u!114 &-8183690181068999680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +326,7 @@ MonoBehaviour:
   m_Name: Exit
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 7256, y: -200}
+  position: {x: 10280, y: -376}
   ports:
     keys:
     - entry
@@ -218,12 +335,76 @@ MonoBehaviour:
       _node: {fileID: -8183690181068999680}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: exit
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
+--- !u!114 &-8080255813987938171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9c6bc73318c8e42ab259a9dab93111, type: 3}
+  m_Name: Two Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 8744, y: -200}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    values:
+    - _fieldName: entry
+      _node: {fileID: -8080255813987938171}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: c
+        node: {fileID: 1704225129388120967}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: -8080255813987938171}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7381913756421021830}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: -8080255813987938171}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 1704225129388120967}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: CONFIRM
+  b: GO BACK
+  dialogText: Steal the Power Regulator & Escape
+  dialogImage: {fileID: 0}
 --- !u!114 &-7394822273520409996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +489,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 768442546450757718}
+        node: {fileID: 788211073390995732}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -321,6 +502,69 @@ MonoBehaviour:
     console in the distance and you pry it open and, with some quick rewiring, disable
     a still-active security protocol. The area is clear."
   dialogImage: {fileID: 8389134475083476877, guid: e64f25cadc5c3cb4db19132d591aafeb, type: 3}
+--- !u!114 &-6664371384952341685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9064, y: -504}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: -6664371384952341685}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: 7166238462824263795}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: -6664371384952341685}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8457816105801517341}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: -6664371384952341685}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 1467315653923116454}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: Roll Technology Check
+  dialogImage: {fileID: 0}
+  difficultyCheckValue: 12
+  abilityCheck: 8
 --- !u!114 &-6449796424343540227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +722,61 @@ MonoBehaviour:
     into the hull. Sparks exploded from the control panels. The ship lurched violently,
     throwing you against the nearest surface.
   dialogImage: {fileID: -6470460504253458178, guid: d8ac2788e24ce174f8fae168bc998720, type: 3}
+--- !u!114 &-6137124562432883782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 7496, y: -280}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -6137124562432883782}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: 1396691848060579007}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -6137124562432883782}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 357140167063657019}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: 'The players grabbed the villager quick before getting vaporized by
+    the energy field. The players explained to the villager that the energy field
+    is lethal. The villager thanked the players and rewarded them with Beautiful
+    Flowers
+
+'
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 3
+  slideInActor: 0
 --- !u!114 &-5133105252098366309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +938,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -941370421937990652}
+        node: {fileID: 6072622043024342447}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -802,7 +1101,7 @@ MonoBehaviour:
   actorImage: {fileID: 8274395459903716270, guid: cb425c47750e9cf4587dc52538c56dae, type: 3}
   backgroundMusic: 1
   slideInActor: 1
---- !u!114 &-941370421937990652
+--- !u!114 &-1512882915724902680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -815,31 +1114,31 @@ MonoBehaviour:
   m_Name: Simple Dialog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 4456, y: -24}
+  position: {x: 8104, y: -184}
   ports:
     keys:
     - entry
     - exit
     values:
     - _fieldName: entry
-      _node: {fileID: -941370421937990652}
+      _node: {fileID: -1512882915724902680}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: exit
-        node: {fileID: -4412876411088049067}
+        node: {fileID: 357140167063657019}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: exit
-      _node: {fileID: -941370421937990652}
+      _node: {fileID: -1512882915724902680}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -773325078961124916}
+        node: {fileID: 1704225129388120967}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -847,9 +1146,64 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: Then, without warning, the terrain shifts. The dense forest splits
-    into three distinct paths, each one cloaked in mist, obscuring what lies beyond.
-  dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
+  dialogText: The villagers stand behind you, their expressions a mix of hope, fear,
+    and desperation. Some whisper prayers, while others clutch makeshift weapons,
+    uncertain of what comes next.
+  dialogImage: {fileID: 0}
+--- !u!114 &-1030083742840372963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9368, y: 312}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -1030083742840372963}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: -268371293375964530}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -1030083742840372963}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: Under the cover of darkness, you move swiftly. The villagers, unaware
+    of your actions, remain in their homes. You loosen the Power Regulator from its
+    slot with precision and silence, disconnecting it in one final movement. The
+    Guardian does not react. The villagers do not awaken. By the time anyone notices,
+    you are already far from the village, the Power Regulator in your grasp.
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 3
+  slideInActor: 0
 --- !u!114 &-914921736258856174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,9 +1313,6 @@ MonoBehaviour:
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: exit
-        node: {fileID: -941370421937990652}
-        reroutePoints: []
       - fieldName: b
         node: {fileID: -5133105252098366309}
         reroutePoints: []
@@ -970,6 +1321,9 @@ MonoBehaviour:
         reroutePoints: []
       - fieldName: b
         node: {fileID: 7223079761840013333}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 6072622043024342447}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1021,6 +1375,68 @@ MonoBehaviour:
     unseen movement, and the sounds of alien wildlife shift into an uneasy silence.
     The ground beneath your feet is uneven, the terrain uncertain."
   dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
+--- !u!114 &-556896470115580964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9866.083, y: -430.84634}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -556896470115580964}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -8457816105801517341}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 1467315653923116454}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 3085133641214069774}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -8278379544381830909}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -1030083742840372963}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -556896470115580964}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8183690181068999680}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: You now have the Power Regulator!
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 3
+  slideInActor: 0
 --- !u!114 &-549249855485463606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1486,69 @@ MonoBehaviour:
     the wreckage. Strange alien flora surrounds you, glowing faintly under an unfamiliar
     sky. The alien enemy ships are nowhere to be seen\u2014for now.\""
   dialogImage: {fileID: 3465286685962602723, guid: d1ae191895f341c488f731b44d9e5bf4, type: 3}
+--- !u!114 &-268371293375964530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9064, y: 136}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: -268371293375964530}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: 5803651813013611768}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: -268371293375964530}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -1030083742840372963}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: -268371293375964530}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 5827062099819717981}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: Roll Stealth Check
+  dialogImage: {fileID: 0}
+  difficultyCheckValue: 17
+  abilityCheck: 7
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,7 +1584,6 @@ MonoBehaviour:
   - {fileID: -3135023289563006252}
   - {fileID: -914921736258856174}
   - {fileID: -4412876411088049067}
-  - {fileID: -941370421937990652}
   - {fileID: 8485743454905987218}
   - {fileID: 4810401146920096027}
   - {fileID: -6889106931454968418}
@@ -1113,7 +1591,6 @@ MonoBehaviour:
   - {fileID: -773325078961124916}
   - {fileID: 3083106319362719230}
   - {fileID: -8363985512746513435}
-  - {fileID: 768442546450757718}
   - {fileID: 7223288966572090328}
   - {fileID: 4619827204161375249}
   - {fileID: 7344571619960809735}
@@ -1122,9 +1599,28 @@ MonoBehaviour:
   - {fileID: -6218144918761825374}
   - {fileID: -9128604589123815502}
   - {fileID: -8363435086898487663}
-  - {fileID: 2949354981606290735}
-  - {fileID: 2462700084468864141}
---- !u!114 &768442546450757718
+  - {fileID: 1396691848060579007}
+  - {fileID: 6072622043024342447}
+  - {fileID: 788211073390995732}
+  - {fileID: 2511590561162074982}
+  - {fileID: -6137124562432883782}
+  - {fileID: 357140167063657019}
+  - {fileID: -1512882915724902680}
+  - {fileID: 1704225129388120967}
+  - {fileID: 7166238462824263795}
+  - {fileID: -8080255813987938171}
+  - {fileID: 5803651813013611768}
+  - {fileID: -6664371384952341685}
+  - {fileID: 7381913756421021830}
+  - {fileID: -268371293375964530}
+  - {fileID: -8457816105801517341}
+  - {fileID: 1467315653923116454}
+  - {fileID: 3085133641214069774}
+  - {fileID: -8278379544381830909}
+  - {fileID: -1030083742840372963}
+  - {fileID: 5827062099819717981}
+  - {fileID: -556896470115580964}
+--- !u!114 &357140167063657019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1133,18 +1629,73 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
-  m_Name: Simple Dialog
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6312, y: -152}
+  position: {x: 7784, y: -200}
   ports:
     keys:
     - entry
     - exit
     values:
     - _fieldName: entry
-      _node: {fileID: 768442546450757718}
+      _node: {fileID: 357140167063657019}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -6137124562432883782}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -8363435086898487663}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 357140167063657019}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -1512882915724902680}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: 'The Guardian looms before you, its massive frame trembling with unstable
+    energy. The Power Regulator hums faintly from within its chest, its glow flickering
+    erratically. '
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 0
+  slideInActor: 0
+--- !u!114 &788211073390995732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 6328, y: -152}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 788211073390995732}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
@@ -1168,10 +1719,13 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: exit
-      _node: {fileID: 768442546450757718}
+      _node: {fileID: 788211073390995732}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: entry
+        node: {fileID: -9128604589123815502}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -1182,6 +1736,212 @@ MonoBehaviour:
     the trees\u2014not just another clearing, but something more. Just ahead, structures
     rise from the mist, nestled between massive, ancient trees."
   dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+  actorImage: {fileID: 0}
+  backgroundMusic: 2
+  slideInActor: 0
+--- !u!114 &1396691848060579007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 7144, y: -184}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: 1396691848060579007}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: 2511590561162074982}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: 1396691848060579007}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -6137124562432883782}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: 1396691848060579007}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8363435086898487663}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: You must act quickly to save the villager! The players must roll Athletic
+    Check 1d20
+  dialogImage: {fileID: 0}
+  difficultyCheckValue: 12
+  abilityCheck: 0
+--- !u!114 &1467315653923116454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9368, y: -664}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 1467315653923116454}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: -6664371384952341685}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 1467315653923116454}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "As you pull the Power Regulator free, the Guardian\u2019s core surges
+    violently, sending out arcs of unstable energy.  With one last desperate pulse,
+    a shockwave blasts outward, sending dust and debris flying. Then, it stops."
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 2
+  slideInActor: 0
+--- !u!114 &1704225129388120967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48345d23cfc457a42a05795ee94e249f, type: 3}
+  m_Name: Three Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 8408, y: -200}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    - c
+    values:
+    - _fieldName: entry
+      _node: {fileID: 1704225129388120967}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -1512882915724902680}
+        reroutePoints: []
+      - fieldName: b
+        node: {fileID: -8080255813987938171}
+        reroutePoints: []
+      - fieldName: b
+        node: {fileID: 7166238462824263795}
+        reroutePoints: []
+      - fieldName: b
+        node: {fileID: 5803651813013611768}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: 1704225129388120967}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 7166238462824263795}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: 1704225129388120967}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 5803651813013611768}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: c
+      _node: {fileID: 1704225129388120967}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8080255813987938171}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: Shut Down
+  b: Reprogram
+  c: Steal
+  dialogText: "The choice is yours\u2014do you remove the Power Regulator, knowing
+    it may end the Guardian forever? Do you stabilize it, ensuring it remains a protector
+    of the village? Or do you take what you need and escape, leaving the Guardian
+    to its fate?"
+  dialogImage: {fileID: 0}
 --- !u!114 &2430139713229179363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,7 +1990,7 @@ MonoBehaviour:
   dialogText: "JUNO\u2019s voice, now distorted from the ship\u2019s failing systems,
     gives one final directive:\r\n\"Impact imminent. Survive\u2026 and retaliate.\""
   dialogImage: {fileID: 4130640169021434097, guid: f5105891ba42ede4a8272e4082e0884f, type: 3}
---- !u!114 &2462700084468864141
+--- !u!114 &2511590561162074982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1239,83 +1999,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
-  m_Name: Simple Dialog
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 6984, y: -456}
+  position: {x: 6840, y: -200}
   ports:
     keys:
     - entry
     - exit
     values:
     - _fieldName: entry
-      _node: {fileID: 2462700084468864141}
+      _node: {fileID: 2511590561162074982}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: exit
+        node: {fileID: -9128604589123815502}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: exit
-      _node: {fileID: 2462700084468864141}
+      _node: {fileID: 2511590561162074982}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: entry
+        node: {fileID: 1396691848060579007}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: "Emerging from the depths of the forest, you finally spot a break in
-    the trees\u2014not just another clearing, but something more. Just ahead, structures
-    rise from the mist, nestled between massive, ancient trees."
-  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
---- !u!114 &2949354981606290735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
-  m_Name: Simple Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 6856, y: 168}
-  ports:
-    keys:
-    - entry
-    - exit
-    values:
-    - _fieldName: entry
-      _node: {fileID: 2949354981606290735}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: exit
-      _node: {fileID: 2949354981606290735}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  entry: 
-  exit: 
-  dialogText: "Emerging from the depths of the forest, you finally spot a break in
-    the trees\u2014not just another clearing, but something more. Just ahead, structures
-    rise from the mist, nestled between massive, ancient trees."
-  dialogImage: {fileID: 4113829005332862926, guid: ea89c4a2b43ab564884b294817eaceac, type: 3}
+  dialogText: 'You decide to use a tool to investigate energy readings, and it leads
+    to the Ancient Guardian! In there, You discover scorched remains of a villager
+    and the Power Regulator lodged into the Ancient Guardian. As you get close, you
+    witness a villager praying to the Ancient Guardian. You discover using their
+    tool that the energy field generated by the guardian is lethal! '
+  dialogImage: {fileID: 4349915267927364619, guid: 2db0dc27bfd841b40a75613596ecd3d9, type: 3}
+  actorImage: {fileID: 0}
+  backgroundMusic: 0
+  slideInActor: 0
 --- !u!114 &2954292930402789505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,6 +2155,60 @@ MonoBehaviour:
   dialogImage: {fileID: -5099292496197868168, guid: c9c6f2f662e66d54fa1b38d79fe02ba4, type: 3}
   difficultyCheckValue: 10
   abilityCheck: 6
+--- !u!114 &3085133641214069774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9368, y: -344}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 3085133641214069774}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: success
+        node: {fileID: 7381913756421021830}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 3085133641214069774}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: "You work quickly, navigating layers of corrupted code and rerouting
+    failing power relays. Sparks flare as you override the failing directives, carefully
+    redirecting energy to restore balance. The Guardian shudders, then steadies,
+    its glowing eyes focusing on you for the first time. A deep, metallic voice\u2014distorted
+    but understandable\u2014echoes through the village."
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 3
+  slideInActor: 0
 --- !u!114 &3192300848648550602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,7 +2352,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 768442546450757718}
+        node: {fileID: 788211073390995732}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1617,7 +2399,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 768442546450757718}
+        node: {fileID: 788211073390995732}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1740,6 +2522,168 @@ MonoBehaviour:
   dialogImage: {fileID: -4593982710790916606, guid: 9475ea064fb31da47b599813c4e2b1a3, type: 3}
   difficultyCheckValue: 14
   abilityCheck: 0
+--- !u!114 &5803651813013611768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9c6bc73318c8e42ab259a9dab93111, type: 3}
+  m_Name: Two Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 8744, y: 88}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    values:
+    - _fieldName: entry
+      _node: {fileID: 5803651813013611768}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: b
+        node: {fileID: 1704225129388120967}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: 5803651813013611768}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -268371293375964530}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: 5803651813013611768}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 1704225129388120967}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: CONFIRM
+  b: GO BACK
+  dialogText: Reprogram the Guardian
+  dialogImage: {fileID: 0}
+--- !u!114 &5827062099819717981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9368, y: 648}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 5827062099819717981}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: failed
+        node: {fileID: -268371293375964530}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 5827062099819717981}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: As you pull the Power Regulator free, the Guardian shudders violently,
+    its system detecting the sudden energy balance loss. A loud, mechanical screech
+    reverberates through the air as its frame spasms uncontrollably. A blaring alarm
+    echoes through the village, waking its inhabitants.
+  dialogImage: {fileID: 0}
+  actorImage: {fileID: 0}
+  backgroundMusic: 2
+  slideInActor: 0
+--- !u!114 &6072622043024342447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663491978e812ee47b341a057fd19a96, type: 3}
+  m_Name: Simple Dialog V2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4456, y: -56}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: 6072622043024342447}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -4412876411088049067}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 6072622043024342447}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -773325078961124916}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: Then, without warning, the terrain shifts. The dense forest splits
+    into three distinct paths, each one cloaked in mist, obscuring what lies beyond
+  dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
+  actorImage: {fileID: 0}
+  backgroundMusic: 0
+  slideInActor: 0
 --- !u!114 &6330349285251545976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,6 +2796,69 @@ MonoBehaviour:
     wasn\u2019t there a moment ago. Then, suddenly, the hum shifts into an alert
     tone. Something mechanical stirs. BATTLE ENCOUNTER TRIGGERS"
   dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
+--- !u!114 &7166238462824263795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9c6bc73318c8e42ab259a9dab93111, type: 3}
+  m_Name: Two Choice Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 8744, y: -488}
+  ports:
+    keys:
+    - entry
+    - a
+    - b
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7166238462824263795}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: 1704225129388120967}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: a
+      _node: {fileID: 7166238462824263795}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -6664371384952341685}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: b
+      _node: {fileID: 7166238462824263795}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 1704225129388120967}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  a: CONFIRM
+  b: GO BACK
+  dialogText: 'Shut Down the Guardian & Take the Power Regulator.
+
+'
+  dialogImage: {fileID: 0}
 --- !u!114 &7223079761840013333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1951,7 +2958,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 768442546450757718}
+        node: {fileID: 788211073390995732}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -2046,7 +3053,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 768442546450757718}
+        node: {fileID: 788211073390995732}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -2056,6 +3063,69 @@ MonoBehaviour:
   exit: 
   dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
   dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
+--- !u!114 &7381913756421021830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1cd762c5b304544bb192b12c7a5e02, type: 3}
+  m_Name: Ability Check
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9064, y: -184}
+  ports:
+    keys:
+    - entry
+    - success
+    - failed
+    values:
+    - _fieldName: entry
+      _node: {fileID: 7381913756421021830}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: a
+        node: {fileID: -8080255813987938171}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: success
+      _node: {fileID: 7381913756421021830}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: 3085133641214069774}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: failed
+      _node: {fileID: 7381913756421021830}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -8278379544381830909}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  success: 
+  failed: 
+  dialogText: Roll Database Check
+  dialogImage: {fileID: 0}
+  difficultyCheckValue: 14
+  abilityCheck: 2
 --- !u!114 &7784697177234536884
 MonoBehaviour:
   m_ObjectHideFlags: 0
