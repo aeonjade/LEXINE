@@ -1,10 +1,9 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
     public string raiderName;
-    public string raiderRace;
+    public RACE raiderRace;
     public ROLE raiderRole;
     public ALIGNMENT alignment;
     public POSITION position;
