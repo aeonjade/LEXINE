@@ -3,18 +3,26 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public float hp;
-    public float armorClass;
-    public float strength;
-    public float intelligence;
-    public float dexterity;
-    public float acrobatics;
-    public float athletics;
-    public float database;
-    public float domination;
-    public float eloquence;
-    public float instinct;
-    public float sensory;
-    public float stealth;
-    public float technology;
+    public string raiderName;
+    public string raiderRace;
+    public ALIGNMENT alignment;
+    public POSITION position;
+    public string story;
+    public int hpMax;
+    public int hpCurrent;
+    public int armorClassTotal;
+    public int armorClassTemp;
+    public int strength;
+    public int intelligence;
+    public int dexterity;
+    public int credits;
+    public int acrobatics;
+    public int athletics;
+    public int database;
+    public int domination;
+    public int eloquence;
+    public int instinct;
+    public int sensory;
+    public int stealth;
+    public int technology;
 }

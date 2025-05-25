@@ -199,7 +199,7 @@ public class NodeReader : MonoBehaviour
         }
     }
 
-    private BaseNode CheckAbility(BaseNode node, float abilityNumber)
+    private BaseNode CheckAbility(BaseNode node, int abilityNumber)
     {
         int d20 = Random.Range(1, 21);
         if (d20 + abilityNumber >= ((AbilityCheckNode)node).getDC())
