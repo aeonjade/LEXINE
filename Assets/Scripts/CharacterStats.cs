@@ -181,6 +181,7 @@ public class CharacterStats : MonoBehaviour
 
     public void PlayAsEien()
     {
+        raiderName = "Eien";
         ChooseRole(ROLE.CAPTAIN);
         ChooseRace(RACE.EARTHKIN);
         alignment = ALIGNMENT.NEUTRAL;
@@ -188,7 +189,10 @@ public class CharacterStats : MonoBehaviour
 
     public void PlayAsXyril()
     {
-
+        raiderName = "Xyril";
+        ChooseRole(ROLE.SURGEON);
+        ChooseRace(RACE.CYBORG);
+        alignment = ALIGNMENT.NEUTRAL;
     }
 
     private void CreateCharacter()
