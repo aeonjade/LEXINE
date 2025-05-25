@@ -1936,19 +1936,23 @@ MonoBehaviour:
     modifier: 0
     rollNumber: 0
     dice: 0
+    weaponType: 0
+    damageType: 0
   secondaryWeapon:
     weaponName: 
     modifier: 0
     rollNumber: 0
     dice: 0
+    weaponType: 0
+    damageType: 0
   armor:
     armorName: Raider Cloth
     additionalArmorClass: 0
   story: 
   hpMax: 0
   hpCurrent: 0
-  armorClassTotal: 0
-  armorClassTemp: 0
+  acTotal: 0
+  acTemp: 0
   strength: 0
   intelligence: 0
   dexterity: 0
