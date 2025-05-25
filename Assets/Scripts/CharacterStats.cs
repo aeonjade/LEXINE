@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public float hp;
-    public float ArmorClass;
+    public float armorClass;
     public float strength;
     public float intelligence;
     public float dexterity;
