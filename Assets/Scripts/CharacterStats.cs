@@ -5,6 +5,7 @@ public class CharacterStats : MonoBehaviour
 {
     public string raiderName;
     public string raiderRace;
+    public ROLE raiderRole;
     public ALIGNMENT alignment;
     public POSITION position;
     public string story;
@@ -25,4 +26,11 @@ public class CharacterStats : MonoBehaviour
     public int sensory;
     public int stealth;
     public int technology;
+
+
+
+    private void CreateCharacter()
+    {
+
+    }
 }

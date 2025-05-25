@@ -1,0 +1,4 @@
+public enum ROLE
+{
+    CAPTAIN, REAPER, ENGINEER, SURGEON
+}
