@@ -297,7 +297,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -556896470115580964}
+        node: {fileID: -4332348904649920442}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -950,6 +950,59 @@ MonoBehaviour:
     the towering alien trees. The canopy above glows faintly, casting strange patterns
     of light across the undergrowth. '
   dialogImage: {fileID: 8822766789783958295, guid: ff07cdc5495175046a71a905e08e0254, type: 3}
+--- !u!114 &-4332348904649920442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
+  m_Name: Simple Dialog
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 9784, y: 632}
+  ports:
+    keys:
+    - entry
+    - exit
+    values:
+    - _fieldName: entry
+      _node: {fileID: -4332348904649920442}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: exit
+        node: {fileID: -8278379544381830909}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 3085133641214069774}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: 5827062099819717981}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -4332348904649920442}
+      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: entry
+        node: {fileID: -556896470115580964}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  entry: 
+  exit: 
+  dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
+  dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
 --- !u!114 &-3135023289563006252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,19 +1453,16 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: exit
+        node: {fileID: -1030083742840372963}
+        reroutePoints: []
+      - fieldName: exit
         node: {fileID: -8457816105801517341}
         reroutePoints: []
       - fieldName: exit
         node: {fileID: 1467315653923116454}
         reroutePoints: []
       - fieldName: exit
-        node: {fileID: 3085133641214069774}
-        reroutePoints: []
-      - fieldName: exit
-        node: {fileID: -8278379544381830909}
-        reroutePoints: []
-      - fieldName: exit
-        node: {fileID: -1030083742840372963}
+        node: {fileID: -4332348904649920442}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1620,6 +1670,7 @@ MonoBehaviour:
   - {fileID: -1030083742840372963}
   - {fileID: 5827062099819717981}
   - {fileID: -556896470115580964}
+  - {fileID: -4332348904649920442}
 --- !u!114 &357140167063657019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,7 +2243,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: -556896470115580964}
+        node: {fileID: -4332348904649920442}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -2618,7 +2669,10 @@ MonoBehaviour:
       _node: {fileID: 5827062099819717981}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: entry
+        node: {fileID: -4332348904649920442}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
