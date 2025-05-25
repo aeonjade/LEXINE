@@ -19,8 +19,8 @@ public class CharacterStats : MonoBehaviour
     public string story;
     public int hpMax;
     public int hpCurrent;
-    public int armorClassTotal;
-    public int armorClassTemp = 0;
+    public int acTotal;
+    public int acTemp = 0;
     public int strength;
     public int intelligence;
     public int dexterity;
@@ -40,17 +40,100 @@ public class CharacterStats : MonoBehaviour
     public bool hasNavigationModule = false;
     public bool hasShieldGenerator = false;
 
+    public void ResetAll()
+    {
+        // Reset basic info
+        raiderName = "";
+        raiderRole = default;
+        raiderRace = default;
+        alignment = default;
+        position = default;
+
+        // Reset appearance and personality
+        looks1 = "";
+        looks2 = "";
+        looks3 = "";
+        attitude1 = "";
+        attitude2 = "";
+        attitude3 = "";
+        story = "";
+
+        // Reset equipment
+        primaryWeapon = null;
+        secondaryWeapon = null;
+        armor = new Armor("Raider Cloth", 0);
+
+        // Reset stats
+        hpMax = 0;
+        hpCurrent = 0;
+        acTotal = 0;
+        acTemp = 0;
+        strength = 0;
+        intelligence = 0;
+        dexterity = 0;
+        credits = 0;
+
+        // Reset skills
+        acrobatics = 0;
+        athletics = 0;
+        database = 0;
+        domination = 0;
+        eloquence = 0;
+        instinct = 0;
+        sensory = 0;
+        stealth = 0;
+        technology = 0;
+
+        // Reset ship parts
+        hasPowerRegulator = false;
+        hasMainDrive = false;
+        hasStabilizerUnit = false;
+        hasNavigationModule = false;
+        hasShieldGenerator = false;
+    }
+
     public void ChooseRole(ROLE role)
     {
+        switch (role)
+        {
+            case ROLE.CAPTAIN:
+                SetBaseStats(11, 13, 3, 0, 1);
+                eloquence += 2;
+                stealth += 1;
+                primaryWeapon = new Weapon("Combat Knife", MODIFIER.STR, 1, DICE.D6, WEAPON_TYPE.MELEE, DAMAGE_TYPE.PHYSICAL);
+                break;
+            case ROLE.REAPER:
+                SetBaseStats(10, 12, 0, 3, 2);
+                domination += 2;
+                acrobatics += 1;
+                primaryWeapon = new Weapon("Light Pistol", MODIFIER.DEX, 1, DICE.D6, WEAPON_TYPE.RANGED, DAMAGE_TYPE.KINETIC);
+                break;
+            case ROLE.ENGINEER:
+                SetBaseStats(12, 14, 2, 1, 0);
+                technology += 2;
+                athletics += 1;
+                primaryWeapon = new Weapon("Reinforced Gauntlet", MODIFIER.STR, 1, DICE.D6, WEAPON_TYPE.MELEE, DAMAGE_TYPE.PHYSICAL);
+                break;
+            case ROLE.SURGEON:
+                SetBaseStats(9, 11, 1, 2, 3);
+                sensory += 2;
+                database += 1;
+                primaryWeapon = new Weapon("Injector Pistol", MODIFIER.INT, 1, DICE.D4, WEAPON_TYPE.RANGED, DAMAGE_TYPE.PHYSICAL);
+                break;
+        }
+    }
 
+    private void SetBaseStats(int baseHP, int baseAC, int baseSTR, int baseDEX, int baseINT)
+    {
+        hpMax = baseHP;
+        hpCurrent = hpMax;
+        acTotal = baseAC;
+        strength = baseSTR;
+        dexterity = baseDEX;
+        intelligence = baseINT;
     }
 
     public void ChooseRace()
-    {
-
-    }
-
-    private void EquipStarterEquipment()
     {
 
     }
