@@ -170,14 +170,29 @@ public class NodeReader : MonoBehaviour
         }
         else if (node is AbilityCheckNode)
         {
-            int d20 = Random.Range(1, 21);
-            if (d20 + characterSheet.gameObject.GetComponent<CharacterStats>().database >= ((AbilityCheckNode)node).getDC())
+            ABILITY currentAbility = ((AbilityCheckNode)node).getAbility();
+            switch (currentAbility)
             {
-                return node.GetOutputPort("success").Connection.node as BaseNode;
-            }
-            else
-            {
-                return node.GetOutputPort("failed").Connection.node as BaseNode;
+                case ABILITY.ACROBATICS:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().acrobatics);
+                case ABILITY.ATHLETICS:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().athletics);
+                case ABILITY.DATABASE:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().database);
+                case ABILITY.DOMINATION:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().domination);
+                case ABILITY.ELOQUENCE:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().eloquence);
+                case ABILITY.INSTINCT:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().instinct);
+                case ABILITY.SENSORY:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().sensory);
+                case ABILITY.STEALTH:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().stealth);
+                case ABILITY.TECHNOLOGY:
+                    return CheckAbility(node, characterSheet.gameObject.GetComponent<CharacterStats>().technology);
+                default:
+                    return null;
             }
         }
         else
@@ -186,6 +201,20 @@ public class NodeReader : MonoBehaviour
 
         }
     }
+
+    private BaseNode CheckAbility(BaseNode node, float abilityNumber)
+    {
+        int d20 = Random.Range(1, 21);
+        if (d20 + abilityNumber >= ((AbilityCheckNode)node).getDC())
+        {
+            return node.GetOutputPort("success").Connection.node as BaseNode;
+        }
+        else
+        {
+            return node.GetOutputPort("failed").Connection.node as BaseNode;
+        }
+    }
+
 
     void PlayBGM(BGM bgm)
     {

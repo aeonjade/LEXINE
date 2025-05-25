@@ -8,8 +8,8 @@ public class CharacterStats : MonoBehaviour
     public float strength;
     public float intelligence;
     public float dexterity;
-    public float athletics;
     public float acrobatics;
+    public float athletics;
     public float database;
     public float domination;
     public float eloquence;
