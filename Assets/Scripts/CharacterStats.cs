@@ -242,19 +242,16 @@ public class CharacterStats : MonoBehaviour
         story = "A master of their trade from a faraway land.";
     }
 
-    public void ChooseCaptain() => ChooseRole(ROLE.Captain);
-    public void ChooseReaper() => ChooseRole(ROLE.Reaper);
-    public void ChooseEngineer() => ChooseRole(ROLE.Engineer);
-    public void ChooseSurgeon() => ChooseRole(ROLE.Surgeon);
+    public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
+    {
+        ChooseRole((ROLE)dropdown.value);
+        ChooseRace(raiderRace);
+    }
 
-
-    public void ChooseEarthkin() => ChooseRace(RACE.Earthkin);
-    public void ChooseCyborg() => ChooseRace(RACE.Cyborg);
-    public void ChooseSteelforged() => ChooseRace(RACE.Steelforged);
-    public void ChooseDemonoid() => ChooseRace(RACE.Demonoid);
-    public void ChooseHexari() => ChooseRace(RACE.Hexari);
-    public void ChooseDrako() => ChooseRace(RACE.Drako);
-    public void ChooseXentharian() => ChooseRace(RACE.Xentharian);
+    public void OnRaceDropdownChanged(TMP_Dropdown dropdown)
+    {
+        ChooseRace((RACE)dropdown.value);
+    }
 
     public void SetRaiderName()
     {
