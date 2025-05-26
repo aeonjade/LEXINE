@@ -96,7 +96,7 @@ public class CustomizeRaider : MonoBehaviour
                 looks2A.text = "Messy and Worn-out";
                 looks2B.text = "Tidy and Prepared";
                 looks3A.text = "Rough and Handmade";
-                looks3B.text = "Advanced and top-quality";
+                looks3B.text = "Advanced";
                 attitude1A.text = "Calm and Careful";
                 attitude1B.text = "Rushed and Careless";
                 attitude2A.text = "Warm and Relaxed";
