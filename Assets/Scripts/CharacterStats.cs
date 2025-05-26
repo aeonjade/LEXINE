@@ -44,9 +44,6 @@ public class CharacterStats : MonoBehaviour
     public bool hasNavigationModule = false;
     public bool hasShieldGenerator = false;
 
-    // Input Fields
-    public TMP_InputField raiderNameInputField;
-
     public void ResetAll()
     {
         // Reset basic info
@@ -198,13 +195,8 @@ public class CharacterStats : MonoBehaviour
                 domination += 1;
                 break;
         }
-        ResetInputFields();
     }
 
-    private void ResetInputFields()
-    {
-        raiderNameInputField.text = "";
-    }
 
     public void PlayAsEien()
     {
@@ -240,27 +232,6 @@ public class CharacterStats : MonoBehaviour
         attitude3 = "Calm and Kind";
         position = POSITION.Backline;
         story = "A master of their trade from a faraway land.";
-    }
-
-    public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
-    {
-        ChooseRole((ROLE)dropdown.value);
-        ChooseRace(raiderRace);
-    }
-
-    public void OnRaceDropdownChanged(TMP_Dropdown dropdown)
-    {
-        ChooseRace((RACE)dropdown.value);
-    }
-
-    public void SetRaiderName()
-    {
-        raiderName = raiderNameInputField.text.Trim();
-    }
-
-    public void SetLooksAndAttitude(ROLE role)
-    {
-
     }
 
 }

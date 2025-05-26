@@ -497,7 +497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &44534108
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44534107}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -543,6 +543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8fd4818d50bf04fbf9295efa1bfa41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStats: {fileID: 616232716}
+  raiderNameInputField: {fileID: 1167384753}
+  positionToggleGroup: {fileID: 59542517}
+  creditsValue: {fileID: 1105589694}
 --- !u!1 &50666389
 GameObject:
   m_ObjectHideFlags: 0
@@ -7876,7 +7880,6 @@ MonoBehaviour:
   hasStabilizerUnit: 0
   hasNavigationModule: 0
   hasShieldGenerator: 0
-  raiderNameInputField: {fileID: 1167384753}
 --- !u!1 &634265359
 GameObject:
   m_ObjectHideFlags: 0
@@ -8667,7 +8670,7 @@ GameObject:
   - component: {fileID: 696463359}
   - component: {fileID: 696463360}
   m_Layer: 5
-  m_Name: FrontlinerToggle
+  m_Name: Frontline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8740,7 +8743,19 @@ MonoBehaviour:
   m_Group: {fileID: 59542517}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: SetRaiderPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &707505792
 GameObject:
@@ -12666,7 +12681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: \u00A0\u00A0\u00A0\u00A0Frontliner
+  m_text: \u00A0\u00A0\u00A0\u00A0Frontline
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f44a994cd2770cd479c537b2fcb06b91, type: 2}
   m_sharedMaterial: {fileID: 8019760135957906264, guid: f44a994cd2770cd479c537b2fcb06b91, type: 2}
@@ -12864,8 +12879,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 616232716}
-        m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
         m_MethodName: SetRaiderName
         m_Mode: 1
         m_Arguments:
@@ -15550,8 +15565,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 616232716}
-        m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
         m_MethodName: OnRaceDropdownChanged
         m_Mode: 2
         m_Arguments:
@@ -18730,7 +18745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: \u00A0\u00A0\u00A0Backliner
+  m_text: \u00A0\u00A0\u00A0Backline
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f44a994cd2770cd479c537b2fcb06b91, type: 2}
   m_sharedMaterial: {fileID: 8019760135957906264, guid: f44a994cd2770cd479c537b2fcb06b91, type: 2}
@@ -20975,7 +20990,7 @@ GameObject:
   - component: {fileID: 1752733003}
   - component: {fileID: 1752733004}
   m_Layer: 5
-  m_Name: BacklinerToggle
+  m_Name: Backline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21048,7 +21063,19 @@ MonoBehaviour:
   m_Group: {fileID: 59542517}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: SetRaiderPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1761459862
 GameObject:
@@ -21169,8 +21196,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 616232716}
-        m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
         m_MethodName: OnRoleDropdownChanged
         m_Mode: 2
         m_Arguments:
@@ -25448,9 +25475,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 616232716}
-        m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
-        m_MethodName: OnRoleDropdownChanged
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: OnAlignmentDropdownChanged
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2065350305}
