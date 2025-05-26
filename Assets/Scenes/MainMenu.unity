@@ -497,7 +497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &44534108
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44534107}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -547,6 +547,18 @@ MonoBehaviour:
   raiderNameInputField: {fileID: 1167384753}
   positionToggleGroup: {fileID: 59542517}
   creditsValue: {fileID: 1105589694}
+  looks1A: {fileID: 671253077}
+  looks1B: {fileID: 892688470}
+  looks2A: {fileID: 63301836}
+  looks2B: {fileID: 332444575}
+  looks3A: {fileID: 733594913}
+  looks3B: {fileID: 2085399109}
+  attitude1A: {fileID: 394461047}
+  attitude1B: {fileID: 1314223500}
+  attitude2A: {fileID: 847239782}
+  attitude2B: {fileID: 1263617844}
+  attitude3A: {fileID: 1649760737}
+  attitude3B: {fileID: 1873676227}
 --- !u!1 &50666389
 GameObject:
   m_ObjectHideFlags: 0
