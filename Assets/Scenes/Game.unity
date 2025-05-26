@@ -176,8 +176,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 8213832078957335743, guid: 4ebb140a5eca1a5428cf03e9f92cd769, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -685630598450486675, guid: 61bafad9dc5ab34419e6aef2920b5ba7, type: 3}
+  m_Sprite: {fileID: -2758448031277389751, guid: 54f0ac95e9c085a47a0f2ead7c362ee2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -685630598450486675, guid: 61bafad9dc5ab34419e6aef2920b5ba7, type: 3}
+  m_Sprite: {fileID: -2758448031277389751, guid: 54f0ac95e9c085a47a0f2ead7c362ee2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -685630598450486675, guid: 61bafad9dc5ab34419e6aef2920b5ba7, type: 3}
+  m_Sprite: {fileID: -2758448031277389751, guid: 54f0ac95e9c085a47a0f2ead7c362ee2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -685630598450486675, guid: 61bafad9dc5ab34419e6aef2920b5ba7, type: 3}
+  m_Sprite: {fileID: -4163279027854776840, guid: 0da6fad559d254e4988afad74869c233, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1704,7 +1704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: -275}
+  m_AnchoredPosition: {x: -120, y: -293}
   m_SizeDelta: {x: 930.446, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023490333
