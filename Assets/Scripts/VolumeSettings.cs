@@ -4,23 +4,41 @@ using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
 {
-    [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] AudioSource BGMSource;
-    [SerializeField] AudioSource SFXSource;
+    [SerializeField] private AudioClip testSFX; // Optional test SFX clip
+
+    private AudioMixer audioMixer;
+    private AudioSource BGMSource;
+    private AudioSource SFXSource;
+
     private Toggle BGMToggle;
     private Toggle SFXToggle;
     private Slider BGMSlider;
     private Slider SFXSlider;
-    [SerializeField] private AudioClip testSFX; // Add this field for test sound
 
     private bool isMusicMuted = false;
     private bool isSFXMuted = false;
     private bool isAdjusting = false;
     private bool isInitializing = false;
 
+    void Awake()
+    {
+        // Auto-assign AudioManager and sources
+        AudioManager manager = FindObjectOfType<AudioManager>();
+        if (manager != null)
+        {
+            BGMSource = manager.GetBGMSource();
+            SFXSource = manager.GetSFXSource();
+            audioMixer = manager.GetAudioMixer();
+        }
+        else
+        {
+            Debug.LogWarning("AudioManager not found. Ensure it exists and uses DontDestroyOnLoad.");
+        }
+    }
+
     void Start()
     {
-        // Assign Controls
+        // Assign UI controls
         AssignControls();
 
         // Load mute states
@@ -36,12 +54,13 @@ public class VolumeSettings : MonoBehaviour
         SFXToggle.SetIsOnWithoutNotify(!isSFXMuted);
 
         // Apply mute states
-        BGMSource.mute = isMusicMuted;
-        SFXSource.mute = isSFXMuted;
+        if (BGMSource != null) BGMSource.mute = isMusicMuted;
+        if (SFXSource != null) SFXSource.mute = isSFXMuted;
+
         BGMSlider.interactable = !isMusicMuted;
         SFXSlider.interactable = !isSFXMuted;
 
-        // Load volume values
+        // Load or initialize volume
         if (PlayerPrefs.HasKey("BGMVolume") && PlayerPrefs.HasKey("SFXVolume"))
         {
             LoadVolume();
@@ -50,12 +69,13 @@ public class VolumeSettings : MonoBehaviour
         {
             SetMusicVolume();
             float SFXVolume = SFXSlider.value;
-            audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+            if (audioMixer != null)
+                audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
             PlayerPrefs.SetFloat("SFXVolume", SFXVolume);
         }
     }
 
-    public void AssignControls()
+    private void AssignControls()
     {
         BGMToggle = GameObject.FindGameObjectWithTag("BGMToggle").GetComponent<Toggle>();
         SFXToggle = GameObject.FindGameObjectWithTag("SFXToggle").GetComponent<Toggle>();
@@ -66,7 +86,7 @@ public class VolumeSettings : MonoBehaviour
     public void OnBGMToggleChanged(bool isOn)
     {
         isMusicMuted = !isOn;
-        BGMSource.mute = isMusicMuted;
+        if (BGMSource != null) BGMSource.mute = isMusicMuted;
         BGMSlider.interactable = !isMusicMuted;
         PlayerPrefs.SetInt("BGMMuted", isMusicMuted ? 1 : 0);
         PlayerPrefs.Save();
@@ -75,7 +95,7 @@ public class VolumeSettings : MonoBehaviour
     public void OnSFXToggleChanged(bool isOn)
     {
         isSFXMuted = !isOn;
-        SFXSource.mute = isSFXMuted;
+        if (SFXSource != null) SFXSource.mute = isSFXMuted;
         SFXSlider.interactable = !isSFXMuted;
         PlayerPrefs.SetInt("SFXMuted", isSFXMuted ? 1 : 0);
         PlayerPrefs.Save();
@@ -84,18 +104,19 @@ public class VolumeSettings : MonoBehaviour
     public void SetMusicVolume()
     {
         float BGMVolume = BGMSlider.value;
-        audioMixer.SetFloat("BGM", Mathf.Log10(BGMVolume) * 20);
+        if (audioMixer != null)
+            audioMixer.SetFloat("BGM", Mathf.Log10(BGMVolume) * 20);
         PlayerPrefs.SetFloat("BGMVolume", BGMVolume);
     }
 
     public void SetSFXVolume()
     {
         float SFXVolume = SFXSlider.value;
-        audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+        if (audioMixer != null)
+            audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", SFXVolume);
 
-        // Play test sound only if not initializing and not muted
-        if (!isInitializing && !isAdjusting && !isSFXMuted)
+        if (!isInitializing && !isAdjusting && !isSFXMuted && SFXSource != null && testSFX != null)
         {
             SFXSource.PlayOneShot(testSFX);
             isAdjusting = true;
@@ -107,17 +128,18 @@ public class VolumeSettings : MonoBehaviour
     {
         isInitializing = true;
 
-        // Set BGM
-        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
+        // Set BGM volume
+        float bgm = PlayerPrefs.GetFloat("BGMVolume");
+        BGMSlider.value = bgm;
         SetMusicVolume();
 
-        // Set SFX without playing test sound
-        float SFXVolume = PlayerPrefs.GetFloat("SFXVolume");
-        SFXSlider.value = SFXVolume;
-        audioMixer.SetFloat("SFX", Mathf.Log10(SFXVolume) * 20);
+        // Set SFX volume without triggering SFX
+        float sfx = PlayerPrefs.GetFloat("SFXVolume");
+        SFXSlider.value = sfx;
+        if (audioMixer != null)
+            audioMixer.SetFloat("SFX", Mathf.Log10(sfx) * 20);
 
         isInitializing = false;
-
     }
 
     private void ResetAdjusting()

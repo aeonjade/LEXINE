@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource BGMSource;
-    [SerializeField] AudioSource SFXSource;
-
+    public static AudioManager Instance;
+    [SerializeField] private AudioSource BGMSource;
+    [SerializeField] private AudioSource SFXSource;
+    [SerializeField] private AudioMixer audioMixer;
     public AudioClip mainMenuBGM;
     public AudioClip click1;
     public AudioClip click2;
@@ -17,8 +19,14 @@ public class AudioManager : MonoBehaviour
         BGMSource.Play();
     }
 
+
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
     }
+    public AudioSource GetBGMSource() => BGMSource;
+    public AudioSource GetSFXSource() => SFXSource;
+    public AudioMixer GetAudioMixer() => audioMixer;
+
+
 }

@@ -6,6 +6,7 @@ using XNode;
 
 public class NodeReader : MonoBehaviour
 {
+    public AudioManager AudioManager;
     public GameObject actorImageGO;
     private AudioSource bgmSource;
     public AudioClip suspenseClip;
