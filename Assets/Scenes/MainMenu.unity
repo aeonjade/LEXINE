@@ -586,10 +586,10 @@ MonoBehaviour:
   coreAugment2Description: {fileID: 661725228}
   primaryWeapon: {fileID: 470775283}
   primaryWeaponDescription: {fileID: 1455679324}
-  secondaryWeapon: {fileID: 809693706}
-  secondaryWeaponDescription: {fileID: 1615265758}
   armor: {fileID: 613229557}
   armorDescription: {fileID: 1051136664}
+  confirmButton: {fileID: 281779552}
+  saveButton: {fileID: 1256997811}
   raiderPortrait: {fileID: 319404165}
   type1Portrait: {fileID: -5425518109755927575, guid: a2bb3f70be560e44bac66800ca66b37e, type: 3}
   type2Portrait: {fileID: -5971142465343899560, guid: 44227f324af4f3e42831b9ccf977026a, type: 3}
@@ -3556,13 +3556,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1713698315}
-        m_TargetAssemblyTypeName: PanelFader, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 2
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: PressConfirm
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 367073459}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14162,30 +14162,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 6ffeddb11bbb5e44b895e3b5975b215a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1713698315}
-        m_TargetAssemblyTypeName: PanelFader, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 44534109}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1713698315}
-        m_TargetAssemblyTypeName: PanelFader, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 43131273}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

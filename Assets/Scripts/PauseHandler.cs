@@ -33,6 +33,7 @@ public class PauseHandler : MonoBehaviour
 
         if (gameplayUI != null)
         {
+            gameplayUI.alpha = 1;
             gameplayUI.interactable = true;
             gameplayUI.blocksRaycasts = true;
         }
@@ -48,6 +49,7 @@ public class PauseHandler : MonoBehaviour
 
         if (gameplayUI != null)
         {
+            gameplayUI.alpha = 0;
             gameplayUI.interactable = false;
             gameplayUI.blocksRaycasts = false;
         }

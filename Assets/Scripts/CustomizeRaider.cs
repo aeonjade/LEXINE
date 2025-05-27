@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CustomizeRaider : MonoBehaviour
@@ -41,6 +42,10 @@ public class CustomizeRaider : MonoBehaviour
     public TextMeshProUGUI primaryWeaponDescription;
     public TextMeshProUGUI armor;
     public TextMeshProUGUI armorDescription;
+
+    public Button confirmButton;
+    public Button saveButton;
+
 
     public Image raiderPortrait;
     public Sprite type1Portrait;
@@ -92,11 +97,13 @@ public class CustomizeRaider : MonoBehaviour
     public void SetRaiderName()
     {
         characterStats.raiderName = raiderNameInputField.text.Trim();
+        CheckInputs();
     }
 
     public void SetRaiderStory()
     {
         characterStats.story = raiderStoryInputField.text.Trim();
+        CheckInputs();
     }
 
     public void SetRaiderPosition()
@@ -270,5 +277,21 @@ public class CustomizeRaider : MonoBehaviour
     {
         raiderNameInputField.text = "";
         raiderStoryInputField.text = "";
+    }
+
+    public void CheckInputs()
+    {
+        confirmButton.interactable = (raiderNameInputField.text.Trim() != "" && raiderStoryInputField.text.Trim() != "") ? true : false;
+        saveButton.interactable = (raiderNameInputField.text.Trim() != "" && raiderStoryInputField.text.Trim() != "") ? true : false;
+    }
+
+    public void PressConfirm()
+    {
+        Invoke("StartAdventure", 2f);
+    }
+
+    private void StartAdventure()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
