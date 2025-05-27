@@ -66,45 +66,29 @@ public class CustomizeRaider : MonoBehaviour
     public TextMeshProUGUI stealthValue;
     public TextMeshProUGUI technologyValue;
 
+
     void Start()
     {
-        characterStats.ChooseRole(characterStats.raiderRole);
-        characterStats.ChooseRace(characterStats.raiderRace);
-        creditsValue.text = characterStats.credits.ToString();
-        SetLooksAndAttitude(characterStats.raiderRole);
-        SetRaiderLooks1();
-        SetRaiderLooks2();
-        SetRaiderLooks3();
-        SetRaiderAttitude1();
-        SetRaiderAttitude2();
-        SetRaiderAttitude3();
-        SetRaiderCoreAugment();
-        ChooseRaiderCoreAugment();
-        SetRaiderEquipment();
-        SetStatsAndSkills();
+        characterStats.ResetAll();
+        ResetInputFields();
     }
+
 
     public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
     {
+        characterStats.ResetAll();
         characterStats.ChooseRole((ROLE)dropdown.value);
         characterStats.ChooseRace(characterStats.raiderRace);
-        SetLooksAndAttitude(characterStats.raiderRole);
-        SetRaiderLooks1();
-        SetRaiderLooks2();
-        SetRaiderLooks3();
-        SetRaiderAttitude1();
-        SetRaiderAttitude2();
-        SetRaiderAttitude3();
-        SetRaiderCoreAugment();
-        ChooseRaiderCoreAugment();
-        SetRaiderEquipment();
-        SetStatsAndSkills();
+        ResetInputFields();
     }
 
     public void OnRaceDropdownChanged(TMP_Dropdown dropdown)
     {
+        ROLE originalRole = characterStats.raiderRole;
+        characterStats.ResetAll();
+        characterStats.ChooseRole(originalRole);
         characterStats.ChooseRace((RACE)dropdown.value);
-        SetStatsAndSkills();
+        ResetInputFields();
     }
 
     public void OnAlignmentDropdownChanged(TMP_Dropdown dropdown)
@@ -311,8 +295,79 @@ public class CustomizeRaider : MonoBehaviour
 
     public void ResetInputFields()
     {
+        // Reset input fields
         raiderNameInputField.text = "";
         raiderStoryInputField.text = "";
+
+        // Reset base choices
+        characterStats.ChooseRole(characterStats.raiderRole);
+        characterStats.ChooseRace(characterStats.raiderRace);
+        characterStats.alignment = ALIGNMENT.Neutral;
+
+        // Reset portrait
+        characterStats.hasType2Portrait = false;
+        raiderPortrait.sprite = type1Portrait;
+        if (raiderType2 != null) raiderType2.isOn = false;
+
+        // Reset toggle groups
+        if (positionToggleGroup != null)
+        {
+            var firstToggle = positionToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderPosition();
+        }
+
+        // Reset core augment
+        if (coreAugment1Toggle != null) coreAugment1Toggle.isOn = true;
+        SetRaiderCoreAugment();
+        ChooseRaiderCoreAugment();
+
+        // Reset looks and attitudes
+        SetLooksAndAttitude(characterStats.raiderRole);
+        if (looks1ToggleGroup != null)
+        {
+            var firstToggle = looks1ToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderLooks1();
+        }
+        if (looks2ToggleGroup != null)
+        {
+            var firstToggle = looks2ToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderLooks2();
+        }
+        if (looks3ToggleGroup != null)
+        {
+            var firstToggle = looks3ToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderLooks3();
+        }
+        if (attitude1ToggleGroup != null)
+        {
+            var firstToggle = attitude1ToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderAttitude1();
+        }
+        if (attitude2ToggleGroup != null)
+        {
+            var firstToggle = attitude2ToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderAttitude2();
+        }
+        if (attitude3ToggleGroup != null)
+        {
+            var firstToggle = attitude3ToggleGroup.GetComponentsInChildren<Toggle>().FirstOrDefault();
+            if (firstToggle != null) firstToggle.isOn = true;
+            SetRaiderAttitude3();
+        }
+
+        // Reset equipment and stats
+        SetRaiderEquipment();
+        SetStatsAndSkills();
+
+        // Reset buttons
+        confirmButton.interactable = false;
+        saveButton.interactable = false;
     }
 
     public void CheckInputs()

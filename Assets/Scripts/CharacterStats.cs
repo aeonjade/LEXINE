@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using System.IO;
 
@@ -162,7 +161,6 @@ public class CharacterStats : MonoBehaviour
 
     public void ChooseRole(ROLE role)
     {
-        ResetAll();
         switch (role)
         {
             case ROLE.Captain:
