@@ -10,6 +10,7 @@ public class CustomizeRaider : MonoBehaviour
 
     // Input Fields
     public TMP_InputField raiderNameInputField;
+    public TMP_InputField raiderStoryInputField;
     public ToggleGroup positionToggleGroup;
     public ToggleGroup looks1ToggleGroup;
     public ToggleGroup looks2ToggleGroup;
@@ -18,6 +19,7 @@ public class CustomizeRaider : MonoBehaviour
     public ToggleGroup attitude2ToggleGroup;
     public ToggleGroup attitude3ToggleGroup;
     public Toggle raiderType2;
+    public Toggle coreAugment1Toggle;
     public TextMeshProUGUI creditsValue;
     public TextMeshProUGUI looks1A;
     public TextMeshProUGUI looks1B;
@@ -31,12 +33,23 @@ public class CustomizeRaider : MonoBehaviour
     public TextMeshProUGUI attitude2B;
     public TextMeshProUGUI attitude3A;
     public TextMeshProUGUI attitude3B;
+    public TextMeshProUGUI coreAugment1;
+    public TextMeshProUGUI coreAugment2;
+    public TextMeshProUGUI coreAugment1Description;
+    public TextMeshProUGUI coreAugment2Description;
+    public TextMeshProUGUI primaryWeapon;
+    public TextMeshProUGUI primaryWeaponDescription;
+    public TextMeshProUGUI armor;
+    public TextMeshProUGUI armorDescription;
+
     public Image raiderPortrait;
     public Sprite type1Portrait;
     public Sprite type2Portrait;
 
     void Start()
     {
+        characterStats.ChooseRole(characterStats.raiderRole);
+        characterStats.ChooseRace(characterStats.raiderRace);
         creditsValue.text = characterStats.credits.ToString();
         SetLooksAndAttitude(characterStats.raiderRole);
         SetRaiderLooks1();
@@ -45,6 +58,9 @@ public class CustomizeRaider : MonoBehaviour
         SetRaiderAttitude1();
         SetRaiderAttitude2();
         SetRaiderAttitude3();
+        SetRaiderCoreAugment();
+        ChooseRaiderCoreAugment();
+        SetRaiderEquipment();
     }
 
     public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
@@ -52,6 +68,8 @@ public class CustomizeRaider : MonoBehaviour
         characterStats.ChooseRole((ROLE)dropdown.value);
         characterStats.ChooseRace(characterStats.raiderRace);
         SetLooksAndAttitude(characterStats.raiderRole);
+        SetRaiderCoreAugment();
+        SetRaiderEquipment();
     }
 
     public void OnRaceDropdownChanged(TMP_Dropdown dropdown)
@@ -67,6 +85,11 @@ public class CustomizeRaider : MonoBehaviour
     public void SetRaiderName()
     {
         characterStats.raiderName = raiderNameInputField.text.Trim();
+    }
+
+    public void SetRaiderStory()
+    {
+        characterStats.story = raiderStoryInputField.text.Trim();
     }
 
     public void SetRaiderPosition()
@@ -173,8 +196,72 @@ public class CustomizeRaider : MonoBehaviour
         characterStats.attitude3 = attitude3ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
     }
 
-    private void ResetInputFields()
+    public void SetRaiderCoreAugment()
+    {
+        switch (characterStats.raiderRole)
+        {
+            case ROLE.Captain:
+                coreAugment1.text = "Commanding Voice";
+                coreAugment1Description.text = "(Passive, Does not stack) Your words carry authority, demanding attention. +2 to Eloquence and Domination checks.";
+                coreAugment2.text = "Tactical Orders";
+                coreAugment2Description.text = "(Bonus, Once per turn) Issue a quick battlefield directive to an ally. Once per turn, grant an ally +1d4 to their next attack roll.";
+                break;
+            case ROLE.Reaper:
+                coreAugment1.text = "Quick Strike";
+                coreAugment1Description.text = "(Bonus, 3-turn Cooldown) Load your next attack with precision and speed. Deal 1d6 damage to an enemy.";
+                coreAugment2.text = "Stealth Module";
+                coreAugment2Description.text = "(Bonus, Stealth Check) You Hide in the shadows, attempting to avoid detection. Grants Advantage on your next attack if successful.";
+                break;
+            case ROLE.Engineer:
+                coreAugment1.text = "Fortify Armor";
+                coreAugment1Description.text = "(Bonus, Once per encounter) Your reinforced gear absorbs incoming fire. Reduce incoming damage by 1d6 for one turn.";
+                coreAugment2.text = "Overclock Shields";
+                coreAugment2Description.text = "(Bonus, Once per long rest) Divert extra power to personal shields. Temporarily gain 10 HP for 2 turns.";
+                break;
+            case ROLE.Surgeon:
+                coreAugment1.text = "Nano-Stitcher";
+                coreAugment1Description.text = "(Action, Twice per long rest) Deploys microscopic repair nanites to rapidly seal wounds. Restore 1d6 HP.";
+                coreAugment2.text = "Neural Overclock";
+                coreAugment2Description.text = "(Action, Once per encounter) Inject an ally with a stimulant. Target gains +2 to attack rolls for 2 turns.";
+                break;
+        }
+    }
+
+    public void ChooseRaiderCoreAugment()
+    {
+        switch (characterStats.raiderRole)
+        {
+            case ROLE.Captain:
+                characterStats.coreAugment = coreAugment1Toggle.isOn ? new Augment("Commanding Voice", "Passive", 0, "Does not stack", "Your words carry authority, demanding attention. +2 to Eloquence and Domination checks.")
+                 : new Augment("Tactical Orders", "Bonus", 1, "Once per turn", "Issue a quick battlefield directive to an ally. Once per turn, grant an ally +1d4 to their next attack roll.");
+                break;
+            case ROLE.Reaper:
+                characterStats.coreAugment = coreAugment1Toggle.isOn ? new Augment("Quick Strike", "Bonus", 3, "3-turn Cooldown", "Load your next attack with precision and speed. Deal 1d6 damage to an enemy.")
+                 : new Augment("Stealth Module", "Bonus", 1, "Stealth Check", "You Hide in the shadows, attempting to avoid detection. Grants Advantage on your next attack if successful.");
+                break;
+            case ROLE.Engineer:
+                characterStats.coreAugment = coreAugment1Toggle.isOn ? new Augment("Fortify Armor", "Bonus", 1, "Once per encounter", "Your reinforced gear absorbs incoming fire. Reduce incoming damage by 1d6 for one turn.")
+                 : new Augment("Overclock Shields", "Bonus", 1, "Once per long rest", "Divert extra power to personal shields. Temporarily gain 10 HP for 2 turns.");
+                break;
+            case ROLE.Surgeon:
+                characterStats.coreAugment = coreAugment1Toggle.isOn ? new Augment("Nano-Stitcher", "Action", 2, "Twice per long rest", "Deploys microscopic repair nanites to rapidly seal wounds. Restore 1d6 HP.")
+                 : new Augment("Neural Overclock", "Action", 1, "Once per encounter", "Inject an ally with a stimulant. Target gains +2 to attack rolls for 2 turns.");
+                break;
+        }
+    }
+
+    public void SetRaiderEquipment()
+    {
+        primaryWeapon.text = characterStats.primaryWeapon.weaponName;
+        armor.text = characterStats.armor.armorName;
+
+        primaryWeaponDescription.text = $"{characterStats.primaryWeapon.rollNumber} {characterStats.primaryWeapon.dice} {characterStats.primaryWeapon.weaponType} {characterStats.primaryWeapon.damageType}";
+        armorDescription.text = $"+{characterStats.armor.additionalArmorClass} AC";
+    }
+
+    public void ResetInputFields()
     {
         raiderNameInputField.text = "";
+        raiderStoryInputField.text = "";
     }
 }

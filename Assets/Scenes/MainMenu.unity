@@ -509,7 +509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &44534108
 Transform:
   m_ObjectHideFlags: 0
@@ -539,7 +539,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44534107}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -557,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterStats: {fileID: 616232716}
   raiderNameInputField: {fileID: 1167384753}
+  raiderStoryInputField: {fileID: 1979147230}
   positionToggleGroup: {fileID: 59542517}
   looks1ToggleGroup: {fileID: 610696914}
   looks2ToggleGroup: {fileID: 671986199}
@@ -565,6 +566,7 @@ MonoBehaviour:
   attitude2ToggleGroup: {fileID: 37036884}
   attitude3ToggleGroup: {fileID: 58883390}
   raiderType2: {fileID: 233493822}
+  coreAugment1Toggle: {fileID: 1208046490}
   creditsValue: {fileID: 1105589694}
   looks1A: {fileID: 671253077}
   looks1B: {fileID: 892688470}
@@ -578,6 +580,16 @@ MonoBehaviour:
   attitude2B: {fileID: 1263617844}
   attitude3A: {fileID: 1649760737}
   attitude3B: {fileID: 1873676227}
+  coreAugment1: {fileID: 1833392400}
+  coreAugment2: {fileID: 1523649962}
+  coreAugment1Description: {fileID: 2049194910}
+  coreAugment2Description: {fileID: 661725228}
+  primaryWeapon: {fileID: 470775283}
+  primaryWeaponDescription: {fileID: 1455679324}
+  secondaryWeapon: {fileID: 809693706}
+  secondaryWeaponDescription: {fileID: 1615265758}
+  armor: {fileID: 613229557}
+  armorDescription: {fileID: 1051136664}
   raiderPortrait: {fileID: 319404165}
   type1Portrait: {fileID: -5425518109755927575, guid: a2bb3f70be560e44bac66800ca66b37e, type: 3}
   type2Portrait: {fileID: -5971142465343899560, guid: 44227f324af4f3e42831b9ccf977026a, type: 3}
@@ -5965,8 +5977,20 @@ MonoBehaviour:
   m_Group: {fileID: 1409211639}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
+      m_Calls:
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: ChooseRaiderCoreAugment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!1 &462620532
 GameObject:
   m_ObjectHideFlags: 0
@@ -13612,8 +13636,20 @@ MonoBehaviour:
   m_Group: {fileID: 1409211639}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 0
+      m_Calls:
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: ChooseRaiderCoreAugment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 1
 --- !u!1 &1218566758
 GameObject:
   m_ObjectHideFlags: 0
@@ -24420,7 +24456,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: SetRaiderStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

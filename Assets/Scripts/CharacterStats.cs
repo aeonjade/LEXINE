@@ -207,7 +207,7 @@ public class CharacterStats : MonoBehaviour
         raiderName = "Eien";
         ChooseRole(ROLE.Captain);
         ChooseRace(RACE.Earthkin);
-        coreAugment = new Augment("Tactical Orders", "Bonus Action", 1, "Turn",
+        coreAugment = new Augment("Tactical Orders", "Passive", 0, "Does not stack",
         "Issue a quick battlefield directive to an ally. Once per turn, grant an ally +1d4 to their next attack roll.");
         alignment = ALIGNMENT.Neutral;
         looks1 = "Well-Groomed";
