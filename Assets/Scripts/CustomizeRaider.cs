@@ -11,6 +11,13 @@ public class CustomizeRaider : MonoBehaviour
     // Input Fields
     public TMP_InputField raiderNameInputField;
     public ToggleGroup positionToggleGroup;
+    public ToggleGroup looks1ToggleGroup;
+    public ToggleGroup looks2ToggleGroup;
+    public ToggleGroup looks3ToggleGroup;
+    public ToggleGroup attitude1ToggleGroup;
+    public ToggleGroup attitude2ToggleGroup;
+    public ToggleGroup attitude3ToggleGroup;
+    public Toggle raiderType2;
     public TextMeshProUGUI creditsValue;
     public TextMeshProUGUI looks1A;
     public TextMeshProUGUI looks1B;
@@ -24,11 +31,20 @@ public class CustomizeRaider : MonoBehaviour
     public TextMeshProUGUI attitude2B;
     public TextMeshProUGUI attitude3A;
     public TextMeshProUGUI attitude3B;
+    public Image raiderPortrait;
+    public Sprite type1Portrait;
+    public Sprite type2Portrait;
 
     void Start()
     {
         creditsValue.text = characterStats.credits.ToString();
         SetLooksAndAttitude(characterStats.raiderRole);
+        SetRaiderLooks1();
+        SetRaiderLooks2();
+        SetRaiderLooks3();
+        SetRaiderAttitude1();
+        SetRaiderAttitude2();
+        SetRaiderAttitude3();
     }
 
     public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
@@ -117,8 +133,44 @@ public class CustomizeRaider : MonoBehaviour
                 attitude2B.text = "Unrestrained";
                 attitude3A.text = "Calm and Kind";
                 attitude3B.text = "Hot-Tempered";
-            break;
+                break;
         }
+    }
+
+    public void SetRaiderPortrait()
+    {
+        characterStats.hasType2Portrait = raiderType2.isOn;
+        raiderPortrait.sprite = characterStats.hasType2Portrait ? type2Portrait : type1Portrait;
+    }
+
+    public void SetRaiderLooks1()
+    {
+        characterStats.looks1 = looks1ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
+    }
+
+    public void SetRaiderLooks2()
+    {
+        characterStats.looks2 = looks2ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
+    }
+
+    public void SetRaiderLooks3()
+    {
+        characterStats.looks3 = looks3ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
+    }
+
+    public void SetRaiderAttitude1()
+    {
+        characterStats.attitude1 = attitude1ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
+    }
+
+    public void SetRaiderAttitude2()
+    {
+        characterStats.attitude2 = attitude2ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
+    }
+
+    public void SetRaiderAttitude3()
+    {
+        characterStats.attitude3 = attitude3ToggleGroup.ActiveToggles().FirstOrDefault().GetComponentInChildren<TextMeshProUGUI>().text;
     }
 
     private void ResetInputFields()

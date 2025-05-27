@@ -43,6 +43,8 @@ public class CharacterStats : MonoBehaviour
     public bool hasStabilizerUnit = false;
     public bool hasNavigationModule = false;
     public bool hasShieldGenerator = false;
+    public bool hasType2Portrait = false;
+
 
     public void ResetAll()
     {
@@ -95,6 +97,8 @@ public class CharacterStats : MonoBehaviour
         hasStabilizerUnit = false;
         hasNavigationModule = false;
         hasShieldGenerator = false;
+
+        hasType2Portrait = false;
     }
 
     public void ChooseRole(ROLE role)
