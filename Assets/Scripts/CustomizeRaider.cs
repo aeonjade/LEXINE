@@ -51,6 +51,21 @@ public class CustomizeRaider : MonoBehaviour
     public Sprite type1Portrait;
     public Sprite type2Portrait;
 
+    public TextMeshProUGUI hpValue;
+    public TextMeshProUGUI acValue;
+    public TextMeshProUGUI strengthValue;
+    public TextMeshProUGUI dexterityValue;
+    public TextMeshProUGUI intelligenceValue;
+    public TextMeshProUGUI acrobaticsValue;
+    public TextMeshProUGUI athleticsValue;
+    public TextMeshProUGUI databaseValue;
+    public TextMeshProUGUI dominationValue;
+    public TextMeshProUGUI eloquenceValue;
+    public TextMeshProUGUI instinctValue;
+    public TextMeshProUGUI sensoryValue;
+    public TextMeshProUGUI stealthValue;
+    public TextMeshProUGUI technologyValue;
+
     void Start()
     {
         characterStats.ChooseRole(characterStats.raiderRole);
@@ -66,6 +81,7 @@ public class CustomizeRaider : MonoBehaviour
         SetRaiderCoreAugment();
         ChooseRaiderCoreAugment();
         SetRaiderEquipment();
+        SetStatsAndSkills();
     }
 
     public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
@@ -82,16 +98,36 @@ public class CustomizeRaider : MonoBehaviour
         SetRaiderCoreAugment();
         ChooseRaiderCoreAugment();
         SetRaiderEquipment();
+        SetStatsAndSkills();
     }
 
     public void OnRaceDropdownChanged(TMP_Dropdown dropdown)
     {
         characterStats.ChooseRace((RACE)dropdown.value);
+        SetStatsAndSkills();
     }
 
     public void OnAlignmentDropdownChanged(TMP_Dropdown dropdown)
     {
         characterStats.alignment = (ALIGNMENT)dropdown.value;
+    }
+
+    public void SetStatsAndSkills()
+    {
+        hpValue.text = characterStats.hpMax.ToString();
+        acValue.text = characterStats.acTotal.ToString();
+        strengthValue.text = characterStats.strength.ToString();
+        dexterityValue.text = characterStats.dexterity.ToString();
+        intelligenceValue.text = characterStats.intelligence.ToString();
+        acrobaticsValue.text = characterStats.acrobatics.ToString();
+        athleticsValue.text = characterStats.athletics.ToString();
+        databaseValue.text = characterStats.database.ToString();
+        dominationValue.text = characterStats.domination.ToString();
+        eloquenceValue.text = characterStats.eloquence.ToString();
+        instinctValue.text = characterStats.instinct.ToString();
+        sensoryValue.text = characterStats.sensory.ToString();
+        stealthValue.text = characterStats.stealth.ToString();
+        technologyValue.text = characterStats.technology.ToString();
     }
 
     public void SetRaiderName()
