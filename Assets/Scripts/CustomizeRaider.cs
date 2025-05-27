@@ -68,7 +68,14 @@ public class CustomizeRaider : MonoBehaviour
         characterStats.ChooseRole((ROLE)dropdown.value);
         characterStats.ChooseRace(characterStats.raiderRace);
         SetLooksAndAttitude(characterStats.raiderRole);
+        SetRaiderLooks1();
+        SetRaiderLooks2();
+        SetRaiderLooks3();
+        SetRaiderAttitude1();
+        SetRaiderAttitude2();
+        SetRaiderAttitude3();
         SetRaiderCoreAugment();
+        ChooseRaiderCoreAugment();
         SetRaiderEquipment();
     }
 
