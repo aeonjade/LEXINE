@@ -6835,6 +6835,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ec67f37b0a8b049b445b66a7d22895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 2ba9435febf99b041b2ce544c04d141e, type: 2}
+  BGMSource: {fileID: 42744957}
+  SFXSource: {fileID: 1818373558}
   testSFX: {fileID: 8300000, guid: b636aebb12ad72a47a94f59027b0b398, type: 3}
 --- !u!1 &529033318
 GameObject:

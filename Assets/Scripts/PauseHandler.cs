@@ -9,7 +9,7 @@ public class PauseHandler : MonoBehaviour
 
     void Start()
     {
-        VolumeSettings.VolumeSettingsInstance.AssignControls();
+        VolumeSettings.VolumeSettingsInstance.VolumeInit();
     }
 
     void Update()
