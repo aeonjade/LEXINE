@@ -6,7 +6,7 @@ public class ButtonSound : MonoBehaviour
 
     public void Play()
     {
-        AudioManager.Instance.PlaySFX(sfx);
+        AudioManager.AudioManagerInstance.PlaySFX(sfx);
     }
 }
 

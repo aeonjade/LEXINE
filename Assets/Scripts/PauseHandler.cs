@@ -7,6 +7,11 @@ public class PauseHandler : MonoBehaviour
 
     private bool isPaused = false;
 
+    void Start()
+    {
+        VolumeSettings.VolumeSettingsInstance.AssignControls();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -50,12 +55,8 @@ public class PauseHandler : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        foreach (var go in FindObjectsOfType<GameObject>())
-        {
-            if (go.scene.name == null || go.scene.name == "")
-                Destroy(go);
-        }
         Time.timeScale = 1f;
+        Destroy(GameObject.FindGameObjectWithTag("UIRoot"));
         SceneManager.LoadScene("MainMenu");
     }
 }

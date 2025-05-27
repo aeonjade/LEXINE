@@ -6800,6 +6800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGMSource: {fileID: 42744957}
   SFXSource: {fileID: 1818373558}
+  audioMixer: {fileID: 24100000, guid: 2ba9435febf99b041b2ce544c04d141e, type: 2}
   mainMenuBGM: {fileID: 8300000, guid: 247eb6584108be547a98427fef092852, type: 3}
   click1: {fileID: 8300000, guid: b636aebb12ad72a47a94f59027b0b398, type: 3}
   click2: {fileID: 8300000, guid: 6ffeddb11bbb5e44b895e3b5975b215a, type: 3}
@@ -6834,9 +6835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ec67f37b0a8b049b445b66a7d22895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 2ba9435febf99b041b2ce544c04d141e, type: 2}
-  BGMSource: {fileID: 42744957}
-  SFXSource: {fileID: 1818373558}
   testSFX: {fileID: 8300000, guid: b636aebb12ad72a47a94f59027b0b398, type: 3}
 --- !u!1 &529033318
 GameObject:
@@ -16244,19 +16242,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 528342014}
-        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
-        m_MethodName: SetMusicVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1405564570
 GameObject:
   m_ObjectHideFlags: 0
@@ -17628,19 +17614,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 528342014}
-        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
-        m_MethodName: SetSFXVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1511187025
 GameObject:
   m_ObjectHideFlags: 0
@@ -20134,7 +20108,7 @@ GameObject:
   - component: {fileID: 1696513624}
   m_Layer: 0
   m_Name: UIRoot
-  m_TagString: Untagged
+  m_TagString: UIRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

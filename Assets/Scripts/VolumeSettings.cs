@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
 {
+    public static VolumeSettings VolumeSettingsInstance;
+
     [SerializeField] private AudioClip testSFX; // Optional test SFX clip
 
     private AudioMixer audioMixer;
@@ -22,17 +24,13 @@ public class VolumeSettings : MonoBehaviour
 
     void Awake()
     {
-        // Auto-assign AudioManager and sources
-        AudioManager manager = FindObjectOfType<AudioManager>();
-        if (manager != null)
+        if (VolumeSettingsInstance == null)
         {
-            BGMSource = manager.GetBGMSource();
-            SFXSource = manager.GetSFXSource();
-            audioMixer = manager.GetAudioMixer();
+            VolumeSettingsInstance = this;
         }
-        else
+        else if (VolumeSettingsInstance != this)
         {
-            Debug.LogWarning("AudioManager not found. Ensure it exists and uses DontDestroyOnLoad.");
+            Destroy(gameObject);
         }
     }
 
@@ -44,10 +42,6 @@ public class VolumeSettings : MonoBehaviour
         // Load mute states
         isMusicMuted = PlayerPrefs.GetInt("BGMMuted", 0) == 1;
         isSFXMuted = PlayerPrefs.GetInt("SFXMuted", 0) == 1;
-
-        // Set up toggle listeners
-        BGMToggle.onValueChanged.AddListener(OnBGMToggleChanged);
-        SFXToggle.onValueChanged.AddListener(OnSFXToggleChanged);
 
         // Set initial toggle states without triggering events
         BGMToggle.SetIsOnWithoutNotify(!isMusicMuted);
@@ -75,12 +69,20 @@ public class VolumeSettings : MonoBehaviour
         }
     }
 
-    private void AssignControls()
+    public void AssignControls()
     {
         BGMToggle = GameObject.FindGameObjectWithTag("BGMToggle").GetComponent<Toggle>();
         SFXToggle = GameObject.FindGameObjectWithTag("SFXToggle").GetComponent<Toggle>();
         BGMSlider = GameObject.FindGameObjectWithTag("BGMSlider").GetComponent<Slider>();
         SFXSlider = GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>();
+
+        // Set up toggle listeners
+        BGMToggle.onValueChanged.AddListener(OnBGMToggleChanged);
+        SFXToggle.onValueChanged.AddListener(OnSFXToggleChanged);
+
+        // Set up slider listeners
+        BGMSlider.onValueChanged.AddListener(delegate { SetMusicVolume(); });
+        SFXSlider.onValueChanged.AddListener(delegate { SetSFXVolume(); });
     }
 
     public void OnBGMToggleChanged(bool isOn)
@@ -104,8 +106,7 @@ public class VolumeSettings : MonoBehaviour
     public void SetMusicVolume()
     {
         float BGMVolume = BGMSlider.value;
-        if (audioMixer != null)
-            audioMixer.SetFloat("BGM", Mathf.Log10(BGMVolume) * 20);
+        if (audioMixer != null) audioMixer.SetFloat("BGM", Mathf.Log10(BGMVolume) * 20);
         PlayerPrefs.SetFloat("BGMVolume", BGMVolume);
     }
 
