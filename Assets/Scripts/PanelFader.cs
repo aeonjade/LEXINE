@@ -42,10 +42,10 @@ public class PanelFader : MonoBehaviour
 
     public void FadeOut(CanvasGroup canvasGroup)
     {
+        canvasGroup.interactable = false;
         LeanTween.alphaCanvas(canvasGroup, 0f, fadeDuration)
             .setOnComplete(() =>
             {
-                canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
                 canvasGroup.gameObject.SetActive(false);
             });
