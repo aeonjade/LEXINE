@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 public class PauseHandler : MonoBehaviour
 {
+    public static AudioManager AudioManagerInstance;
     public CanvasGroup pauseMenuUI;
     public CanvasGroup gameplayUI;
 
@@ -9,6 +10,7 @@ public class PauseHandler : MonoBehaviour
 
     void Start()
     {
+        AudioManagerInstance = FindFirstObjectByType<AudioManager>();
         VolumeSettings.VolumeSettingsInstance.VolumeInit();
     }
 
@@ -53,6 +55,11 @@ public class PauseHandler : MonoBehaviour
             gameplayUI.interactable = false;
             gameplayUI.blocksRaycasts = false;
         }
+    }
+
+    public void PlaySounds(AudioClip clip)
+    {
+        AudioManagerInstance.PlaySFX(clip);
     }
 
     public void BackToMainMenu()
