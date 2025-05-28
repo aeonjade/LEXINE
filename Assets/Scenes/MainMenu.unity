@@ -461,7 +461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &43131272
 Transform:
   m_ObjectHideFlags: 0
@@ -489,8 +489,8 @@ CanvasGroup:
   m_GameObject: {fileID: 43131271}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &44534107
 GameObject:
@@ -509,7 +509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &44534108
 Transform:
   m_ObjectHideFlags: 0
@@ -540,8 +540,8 @@ CanvasGroup:
   m_GameObject: {fileID: 44534107}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &44534110
 MonoBehaviour:
@@ -559,6 +559,7 @@ MonoBehaviour:
   raiderNameInputField: {fileID: 1167384753}
   raiderStoryInputField: {fileID: 1979147230}
   positionToggleGroup: {fileID: 59542517}
+  coreAugmentToggleGroup: {fileID: 1409211639}
   looks1ToggleGroup: {fileID: 610696914}
   looks2ToggleGroup: {fileID: 671986199}
   looks3ToggleGroup: {fileID: 1982075261}
@@ -607,6 +608,9 @@ MonoBehaviour:
   sensoryValue: {fileID: 1966394852}
   stealthValue: {fileID: 366303217}
   technologyValue: {fileID: 1617051518}
+  roleDropdown: {fileID: 1761459864}
+  raceDropdown: {fileID: 1364278398}
+  alignmentDropdown: {fileID: 2065350305}
 --- !u!1 &50666389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,7 +2710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &200968347
 Transform:
   m_ObjectHideFlags: 0
@@ -2735,8 +2739,8 @@ CanvasGroup:
   m_GameObject: {fileID: 200968346}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &210438191
 GameObject:
@@ -3451,11 +3455,11 @@ RectTransform:
   m_Children:
   - {fileID: 1375236160}
   - {fileID: 367073458}
+  - {fileID: 44534108}
   - {fileID: 1638839504}
   - {fileID: 200968347}
   - {fileID: 43131272}
   - {fileID: 1169720741}
-  - {fileID: 44534108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4693,7 +4697,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 0
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &382178221
 GameObject:
@@ -7956,6 +7960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b76d4b5f77fbe4f9c5b01a3b73e531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customizer: {fileID: 44534110}
   raiderName: 
   raiderRole: 0
   raiderRace: 0
@@ -8080,7 +8085,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -13124,7 +13129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1169720741
 Transform:
   m_ObjectHideFlags: 0
@@ -13153,8 +13158,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1169720740}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1183366616
 GameObject:
@@ -13880,7 +13885,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -16774,7 +16779,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -18495,7 +18500,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -18663,6 +18668,18 @@ MonoBehaviour:
       - m_Target: {fileID: 44534110}
         m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
         m_MethodName: ResetInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 44534110}
+        m_TargetAssemblyTypeName: CustomizeRaider, Assembly-CSharp
+        m_MethodName: ResetDropdowns
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19520,7 +19537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1638839504
 Transform:
   m_ObjectHideFlags: 0
@@ -19547,8 +19564,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1638839503}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1642792696
 GameObject:
@@ -19692,7 +19709,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -19828,7 +19845,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -22576,7 +22593,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

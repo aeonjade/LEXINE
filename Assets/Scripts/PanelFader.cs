@@ -31,7 +31,6 @@ public class PanelFader : MonoBehaviour
 
     private void FadeInDelayed(CanvasGroup canvasGroup)
     {
-        canvasGroup.gameObject.SetActive(true);
         LeanTween.alphaCanvas(canvasGroup, 1f, fadeDuration)
             .setOnStart(() =>
             {
@@ -43,12 +42,8 @@ public class PanelFader : MonoBehaviour
     public void FadeOut(CanvasGroup canvasGroup)
     {
         canvasGroup.interactable = false;
-        LeanTween.alphaCanvas(canvasGroup, 0f, fadeDuration)
-            .setOnComplete(() =>
-            {
-                canvasGroup.blocksRaycasts = false;
-                canvasGroup.gameObject.SetActive(false);
-            });
+        canvasGroup.blocksRaycasts = false;
+        LeanTween.alphaCanvas(canvasGroup, 0f, fadeDuration);
     }
 
 

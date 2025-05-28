@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
+using TMPro;
 
 [Serializable]
 public class CharacterStats : MonoBehaviour
@@ -62,7 +64,8 @@ public class CharacterStats : MonoBehaviour
         public bool hasPowerRegulator, hasMainDrive, hasStabilizerUnit;
         public bool hasNavigationModule, hasShieldGenerator, hasType2Portrait;
     }
-
+    [SerializeField]
+    private CustomizeRaider customizer;
     public string raiderName;
     public ROLE raiderRole;
     public RACE raiderRace;
@@ -390,6 +393,11 @@ public class CharacterStats : MonoBehaviour
         string json = File.ReadAllText(path);
         var saveData = JsonUtility.FromJson<SaveData>(json);
 
+        // Update dropdowns
+        customizer.roleDropdown.value = (int)saveData.raiderRole;
+        customizer.raceDropdown.value = (int)saveData.raiderRace;
+        customizer.alignmentDropdown.value = (int)saveData.alignment;
+
         // Basic Info
         this.raiderName = saveData.raiderName;
         this.raiderRole = saveData.raiderRole;
@@ -451,7 +459,53 @@ public class CharacterStats : MonoBehaviour
         this.hasShieldGenerator = saveData.hasShieldGenerator;
         this.hasType2Portrait = saveData.hasType2Portrait;
 
+        // Update input fields
+        customizer.raiderNameInputField.text = this.raiderName;
+        customizer.raiderStoryInputField.text = this.story;
+
+        // Update portrait
+        customizer.raiderType2.isOn = this.hasType2Portrait;
+        customizer.raiderPortrait.sprite = this.hasType2Portrait ?
+            customizer.type2Portrait : customizer.type1Portrait;
+
+        // Update looks and attitudes text
+        customizer.SetLooksAndAttitude(this.raiderRole);
+
+        // Update core augment
+        customizer.SetRaiderCoreAugment();
+
+        // Find and set the correct toggle for each group based on loaded text
+        SetToggleByText(customizer.coreAugmentToggleGroup, this.coreAugment.augmentName);
+        SetToggleByText(customizer.looks1ToggleGroup, this.looks1);
+        SetToggleByText(customizer.looks2ToggleGroup, this.looks2);
+        SetToggleByText(customizer.looks3ToggleGroup, this.looks3);
+        SetToggleByText(customizer.attitude1ToggleGroup, this.attitude1);
+        SetToggleByText(customizer.attitude2ToggleGroup, this.attitude2);
+        SetToggleByText(customizer.attitude3ToggleGroup, this.attitude3);
+
+        // Update stats display
+        customizer.SetStatsAndSkills();
+        customizer.SetRaiderEquipment();
+
+        // Enable/disable buttons based on loaded state
+        customizer.CheckInputs();
+
         Debug.Log($"Character loaded from: {path}");
     }
 
+    private void SetToggleByText(ToggleGroup group, string targetText)
+    {
+        if (group == null || string.IsNullOrEmpty(targetText)) return;
+
+        var toggles = group.GetComponentsInChildren<Toggle>();
+        foreach (var toggle in toggles)
+        {
+            var text = toggle.GetComponentInChildren<TextMeshProUGUI>();
+            if (text != null && text.text == targetText)
+            {
+                toggle.isOn = true;
+                break;
+            }
+        }
+    }
 }

@@ -13,6 +13,7 @@ public class CustomizeRaider : MonoBehaviour
     public TMP_InputField raiderNameInputField;
     public TMP_InputField raiderStoryInputField;
     public ToggleGroup positionToggleGroup;
+    public ToggleGroup coreAugmentToggleGroup;
     public ToggleGroup looks1ToggleGroup;
     public ToggleGroup looks2ToggleGroup;
     public ToggleGroup looks3ToggleGroup;
@@ -66,13 +67,14 @@ public class CustomizeRaider : MonoBehaviour
     public TextMeshProUGUI stealthValue;
     public TextMeshProUGUI technologyValue;
 
+    public TMP_Dropdown roleDropdown;
+    public TMP_Dropdown raceDropdown;
+    public TMP_Dropdown alignmentDropdown;
 
     void Start()
     {
-        characterStats.ResetAll();
         characterStats.ChooseRole(characterStats.raiderRole);
         characterStats.ChooseRace(characterStats.raiderRace);
-        ResetInputFields();
     }
 
 
@@ -385,5 +387,12 @@ public class CustomizeRaider : MonoBehaviour
     private void StartAdventure()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void ResetDropdowns()
+    {
+        roleDropdown.value = 0;
+        raceDropdown.value = 0;
+        alignmentDropdown.value = 0;
     }
 }
