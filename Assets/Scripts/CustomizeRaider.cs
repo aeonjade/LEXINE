@@ -76,9 +76,10 @@ public class CustomizeRaider : MonoBehaviour
 
     public void OnRoleDropdownChanged(TMP_Dropdown dropdown)
     {
+        RACE originalRace = characterStats.raiderRace;
         characterStats.ResetAll();
         characterStats.ChooseRole((ROLE)dropdown.value);
-        characterStats.ChooseRace(characterStats.raiderRace);
+        characterStats.ChooseRace(originalRace);
         ResetInputFields();
     }
 
