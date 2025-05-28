@@ -70,6 +70,8 @@ public class CustomizeRaider : MonoBehaviour
     void Start()
     {
         characterStats.ResetAll();
+        characterStats.ChooseRole(characterStats.raiderRole);
+        characterStats.ChooseRace(characterStats.raiderRace);
         ResetInputFields();
     }
 
@@ -301,8 +303,6 @@ public class CustomizeRaider : MonoBehaviour
         raiderStoryInputField.text = "";
 
         // Reset base choices
-        characterStats.ChooseRole(characterStats.raiderRole);
-        characterStats.ChooseRace(characterStats.raiderRace);
         characterStats.alignment = ALIGNMENT.Neutral;
 
         // Reset portrait
