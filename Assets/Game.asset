@@ -208,7 +208,7 @@ MonoBehaviour:
   entry: 
   success: 
   failed: 
-  dialogText: you chose the right path
+  dialogText: You chose the right path.
   dialogImage: {fileID: 8389134475083476877, guid: e64f25cadc5c3cb4db19132d591aafeb, type: 3}
   difficultyCheckValue: 10
   abilityCheck: 8
@@ -1001,7 +1001,7 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
+  dialogText: A battle erupts!
   dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
 --- !u!114 &-3135023289563006252
 MonoBehaviour:
@@ -2201,7 +2201,7 @@ MonoBehaviour:
   entry: 
   success: 
   failed: 
-  dialogText: you chose the left path
+  dialogText: You chose the left path.
   dialogImage: {fileID: -5099292496197868168, guid: c9c6f2f662e66d54fa1b38d79fe02ba4, type: 3}
   difficultyCheckValue: 10
   abilityCheck: 6
@@ -2410,7 +2410,7 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
+  dialogText: A battle erupts!
   dialogImage: {fileID: -6270953770400647376, guid: 7958dcf5e7e899849bf837b62a9e5aa0, type: 3}
 --- !u!114 &4810401146920096027
 MonoBehaviour:
@@ -3114,7 +3114,7 @@ MonoBehaviour:
       _dynamic: 0
   entry: 
   exit: 
-  dialogText: INSERT BATTLE ENCOUNTER MECHANIC HERE
+  dialogText: A battle erupts!
   dialogImage: {fileID: 7680820834086852892, guid: 14eb5828c79e4ed43a6c8608422be262, type: 3}
 --- !u!114 &7381913756421021830
 MonoBehaviour:

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XNode;
 
@@ -192,6 +193,12 @@ public class NodeReader : MonoBehaviour
                 default:
                     return null;
             }
+        }
+        else if (node is ExitNode)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("UIRoot"));
+            SceneManager.LoadScene("MainMenu");
+            return null;
         }
         else
         {
