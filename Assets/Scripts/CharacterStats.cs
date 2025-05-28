@@ -376,14 +376,14 @@ public class CharacterStats : MonoBehaviour
         };
 
         string json = JsonUtility.ToJson(saveData, true);
-        string path = Path.Combine(Application.persistentDataPath, $"{raiderName}_character.json");
+        string path = Path.Combine(Application.persistentDataPath, "character.json");
         File.WriteAllText(path, json);
         Debug.Log($"Character saved to: {path}");
     }
 
-    public void LoadCharacter(string characterName)
+    public void LoadCharacter()
     {
-        string path = Path.Combine(Application.persistentDataPath, $"{characterName}_character.json");
+        string path = Path.Combine(Application.persistentDataPath, "character.json");
         if (!File.Exists(path))
         {
             Debug.LogWarning($"No save file found at: {path}");

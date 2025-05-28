@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class CustomizeRaider : MonoBehaviour
 {
@@ -70,6 +71,8 @@ public class CustomizeRaider : MonoBehaviour
     public TMP_Dropdown roleDropdown;
     public TMP_Dropdown raceDropdown;
     public TMP_Dropdown alignmentDropdown;
+
+    public VideoPlayer videoBG;
 
     void Start()
     {
@@ -379,9 +382,10 @@ public class CustomizeRaider : MonoBehaviour
         saveButton.interactable = (raiderNameInputField.text.Trim() != "" && raiderStoryInputField.text.Trim() != "") ? true : false;
     }
 
-    public void PressConfirm()
+    public void PressConfirm(VideoClip videoClip)
     {
-        Invoke("StartAdventure", 2f);
+        videoBG.clip = videoClip;
+        Invoke("StartAdventure", 5f);
     }
 
     private void StartAdventure()

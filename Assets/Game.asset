@@ -1028,7 +1028,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: exit
-        node: {fileID: 7784697177234536884}
+        node: {fileID: -2735722344495122925}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -1090,7 +1090,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: entry
-        node: {fileID: 7784697177234536884}
+        node: {fileID: -3135023289563006252}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1630,7 +1630,6 @@ MonoBehaviour:
   - {fileID: 2430139713229179363}
   - {fileID: -549249855485463606}
   - {fileID: -2735722344495122925}
-  - {fileID: 7784697177234536884}
   - {fileID: -3135023289563006252}
   - {fileID: -914921736258856174}
   - {fileID: -4412876411088049067}
@@ -3180,53 +3179,6 @@ MonoBehaviour:
   dialogImage: {fileID: 6894999169920593895, guid: 5f09e46f7a56f9d459ee3d03fb635ddf, type: 3}
   difficultyCheckValue: 14
   abilityCheck: 2
---- !u!114 &7784697177234536884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47dfb02738df46a44baff62e4fe828dd, type: 3}
-  m_Name: Simple Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 3448, y: -40}
-  ports:
-    keys:
-    - entry
-    - exit
-    values:
-    - _fieldName: entry
-      _node: {fileID: 7784697177234536884}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: exit
-        node: {fileID: -2735722344495122925}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: exit
-      _node: {fileID: 7784697177234536884}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: entry
-        node: {fileID: -3135023289563006252}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  entry: 
-  exit: 
-  dialogText: END OF PROLOGUE
-  dialogImage: {fileID: 3465286685962602723, guid: d1ae191895f341c488f731b44d9e5bf4, type: 3}
 --- !u!114 &8485743454905987218
 MonoBehaviour:
   m_ObjectHideFlags: 0
